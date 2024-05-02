@@ -1,0 +1,22 @@
+
+.sidebar{
+    width: 280px;
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar-expanded {
+    width: 280px;
+}
+.sidebar-collapsed {
+    width: 0;
+}
+
+.nav-item{
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-item:hover{
+    background-color: #ccc;
+    color: white;
+}
