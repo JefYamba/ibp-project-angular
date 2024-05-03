@@ -1,0 +1,10 @@
+
+.nav-item{
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-item:hover{
+    background-color: #ccc;
+    color: white;
+}

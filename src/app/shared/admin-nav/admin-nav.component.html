@@ -1,0 +1,35 @@
+<nav  style="height: 56px; cursor: pointer" class="d-flex ps-3 align-items-center" [routerLink]="['/']">
+    <span class="ps-3 fw-medium fs-4" >{{ AppConfig.appName }}</span>
+</nav>
+<ul class="nav nav-pills flex-column mb-auto p-3 gap-1">
+    <li class="nav-item fw-medium">
+        <a [routerLink]="['/admin']" routerLink="/admin" class="nav-link link-body-emphasis d-flex flex-nowrap">
+            <i class="bi bi-speedometer2  me-2"></i>
+            Dashboard
+        </a>
+    </li>
+    <li class="nav-item fw-medium">
+        <a [routerLink]="['/admin/messages']" class="nav-link link-body-emphasis d-flex flex-nowrap">
+            <i class="bi bi-chat-left-dots  me-2"></i>
+            Messages
+        </a>
+    </li>
+    <li class="nav-item fw-medium">
+        <a [routerLink]="['/admin/announcements']" class="nav-link link-body-emphasis d-flex flex-nowrap">
+            <i class="bi bi-megaphone me-2"></i>
+            Announcements
+        </a>
+    </li>
+    <li class="nav-item fw-medium">
+        <a [routerLink]="['/admin/books']"  class="nav-link link-body-emphasis d-flex flex-nowrap">
+            <i class="bi bi-book  me-2"></i>
+            Books
+        </a>
+    </li>
+    <li class="nav-item fw-medium">
+        <a [routerLink]="['/admin/users']" class="nav-link link-body-emphasis d-flex flex-nowrap">
+            <i class="bi bi-people  me-2"></i>
+            Users
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,104 @@
+<div class="p-sm-2 p-md-4">
+    <div class="row">
+        <div class="card col-lg-3 col-md-3 col-sm-4 col-12 p-3">
+            <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                <div class="rounded rounded-circle border-1 border-black position-relative overflow-hidden" (click)="input.click()" style="width: 100%; aspect-ratio: 300/300">
+                    <img ngSrc="{{imageUrl}}" alt="img" fill style="object-fit: cover; cursor: pointer">
+                </div>
+                <button (click)="input.click()" class="btn btn-outline-secondary btn-sm" type="button" style="width: 100%">
+                    <span>Select Image</span>
+                    <input #input type="file" (change)="selectImage($event)" hidden="hidden">
+                </button>
+            </div>
+        </div>
+        <div class="card col-lg-9 col-md-9 col-sm-8 col-12 p-3">
+            <nav>
+                <div class="nav nav-tabs">
+                    <button (click)="changeViewState(ViewState.PROFILE)" [ngClass]="viewState == ViewState.PROFILE ? 'active': ''" class="nav-link">Profile</button>
+                    <button (click)="changeViewState(ViewState.PASSWORD)" [ngClass]="viewState == ViewState.PASSWORD ? 'active': ''" class="nav-link">Change Password</button>
+                    <button (click)="changeViewState(ViewState.SECURITY)" [ngClass]="viewState == ViewState.SECURITY ? 'active': ''" class="nav-link">Security</button>
+                </div>
+            </nav>
+            <div class="tab-content p-3">
+                <div *ngIf="viewState==ViewState.PROFILE">
+                    <form class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column gap-3" style="min-height: 540px">
+                            <div class="form-floating">
+                                <input type="email" class="form-control " id="email" name="email" placeholder="Email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control " id="firstname"  name="firstname" placeholder="Firstname">
+                                <label for="firstname">Firstname</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control " id="lastname" name="lastname" placeholder="Lastname">
+                                <label for="lastname">Lastname</label>
+                            </div>
+                            <div class="form-floating">
+                                <select class="form-select" id="gender" name="gender" aria-label="Floating label select example">
+                                    <option selected value="MALE">Male</option>
+                                    <option value="FEMALE">Female</option>
+                                </select>
+                                <label for="gender">Gender</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="date" class="form-control " id="birthdate" name="birthdate" placeholder="Birthdate">
+                                <label for="birthdate">Birthdate</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control " id="phone_number" name="phoneNumber" placeholder="Phone number">
+                                <label for="phone_number">Phone number</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control form-control-sm" placeholder="Address" id="address" style="height: 100px"></textarea>
+                                <label for="address">Address</label>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-5">
+                            <button type="submit" class="btn btn-primary ms-auto w-25">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="viewState==ViewState.PASSWORD">
+                    <form class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column gap-3" style="min-height: 540px" >
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="current_password" placeholder="Current password">
+                                <label for="current_password">Current password</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="new_password" placeholder="New password">
+                                <label for="new_password">New password</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="confirm_new_password" placeholder="Conform new password">
+                                <label for="confirm_new_password">Conform new password</label>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-5">
+                            <button type="submit" class="btn btn-primary ms-auto w-25">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="viewState==ViewState.SECURITY">
+                    <form class="d-flex flex-column gap-3" >
+                        <div class="d-flex flex-column gap-3" style="min-height: 540px">
+                            <div class="form-floating">
+                                <select class="form-select" id="role" name="role" aria-label="Floating label select example">
+                                    <option selected value="USER">User</option>
+                                    <option value="ADMIN">Admin</option>
+                                </select>
+                                <label for="role">Gender</label>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-5">
+                            <button type="submit" class="btn btn-primary ms-auto w-25">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

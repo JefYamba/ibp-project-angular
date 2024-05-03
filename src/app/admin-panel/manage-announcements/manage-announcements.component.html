@@ -1,0 +1,28 @@
+<section class="my-3 overflow-hidden">
+    <div class="mb-2 d-flex align-items-center gap-2">
+        <div class="fw-medium fs-4">Manage Announcements</div>
+        <button [routerLink]="['/admin/announcement']" class="btn btn-sm ms-auto btn-outline-secondary">
+            Make a announcement
+        </button>
+    </div>
+    <div class="my-3" style="max-height:720px ; overflow-y: scroll">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,8,9,10,11,12,13,14,15]">
+                <th scope="row">{{i}}</th>
+                <td>Mark {{i}}</td>
+                <td>Otto {{i}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

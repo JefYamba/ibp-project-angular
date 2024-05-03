@@ -1,0 +1,24 @@
+<div class="my-3 p-3 bg-body rounded shadow-sm bg-body-tertiary">
+    <h6 class="border-bottom pb-2 mb-0">Send Message</h6>
+    <div class="d-flex flex-column text-body-secondary pt-3">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <img ngSrc="{{'./assets/images/default.png' }}"
+                 alt=""
+                 width="32"
+                 height="32"
+                 class="rounded"
+                 priority
+            >
+            <p class="mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark mb-2 fst-italic">Receiver name</strong>
+            </p>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Announcement content" id="content" style="height: 200px"></textarea>
+            <label for="content">Message content</label>
+        </div>
+        <div class="d-flex mt-3">
+            <button type="submit" class="btn btn-primary ms-auto w-25">Send</button>
+        </div>
+    </div>
+</div>

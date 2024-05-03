@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="dropdown" style="cursor: pointer">
     <a  class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
         data-bs-toggle="dropdown" aria-expanded="false">
 
@@ -7,30 +7,32 @@
              alt=""
              width="32"
              height="32"
-             class="rounded-circle">
+             class="rounded-circle"
+             priority
+        >
     </a>
     <ul class="dropdown-menu text-small shadow dropdown-menu-end p-3" style="width: 220px">
         <li>
-            <a class="dropdown-item d-flex gap-2 align-items-center">
+            <a  [routerLink]="['/profile']"  class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-person-bounding-box  me-2"></i>
                 <span>Profile</span>
             </a>
         </li>
         <li>
-            <a class="dropdown-item d-flex gap-2 align-items-center">
+            <a [routerLink]="['/user/messages']" class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-chat-left-dots  me-2"></i>
                 <span>Messages</span>
             </a>
         </li>
         <li *ngIf="user.role == Role.ADMIN">
-            <a routerLink="admin" class="dropdown-item d-flex gap-2 align-items-center">
+            <a  [routerLink]="['/admin']"  class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-speedometer  me-2"></i>
                 <span>Admin Panel</span>
             </a>
         </li>
         <li><hr class="dropdown-divider"></li>
         <li>
-            <a class="dropdown-item text-danger d-flex gap-2 align-items-center">
+            <a  [routerLink]="['/login']"  class="dropdown-item text-danger d-flex gap-2 align-items-center">
                 <i class="bi bi-box-arrow-right  me-2"></i>
                 <span>Sign out</span>
             </a>

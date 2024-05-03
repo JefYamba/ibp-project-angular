@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 450px){
     .user-name{
         display: none;
     }

@@ -1,9 +1,6 @@
 <section class="my-5 overflow-hidden">
     <div class="mb-2 d-flex justify-content-between align-items-center">
-        <div class="fw-medium fs-4">Latest</div>
-
-    </div>
-    <div class="mb-2 d-flex justify-content-between align-items-center">
+        <div class="fw-medium fs-4">Books</div>
         <div>
             <input
                 class="form-control form-control-sm"
@@ -11,56 +8,10 @@
                 style="width: 180px"
             >
         </div>
-        <div>
-            <select class="form-select form-select-sm" aria-label="Small select example" style="width: 180px">
-                <option selected>Genre</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-
     </div>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 g-3">
-        <div  *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]" class="col">
-            <div class="card  bg-body-tertiary">
-                <div [ngClass]="isOnMobile ? 'd-flex flex-column g-1' : 'row g-0'" [style.height.px]="isOnMobile ? 450 : 220 ">
-                    <div [ngClass]="isOnMobile ? '' : 'col-md-4'" [style.height.%]="isOnMobile ? 60 : 100" >
-                        <div style="height: 100%; width: 100%;position: relative">
-                            <img ngSrc="./assets/images/BOCCHI.jpeg" class="object-fit-cover" alt="..." fill
-                                 [ngClass]="isOnMobile? 'card-img-top rounded-top w-500' : 'img-fluid rounded-start'"
-                            >
-                        </div>
-                    </div>
-                    <div [ngClass]="isOnMobile ? '' : 'col-md-8'" [style.height.%]="isOnMobile ? 40 : 100"  class="d-flex flex-column justify-content-between position-relative">
-                        <div class="card-body">
-                            <h5 class="book-title">Book title</h5>
-                            <div class="book-text">
-                                <div class="w-80px">Author</div>
-                                <div>J.K. Rowling </div>
-                            </div>
-                            <div class="book-text">
-                                <div class="w-80px">Genre</div>
-                                <div>Adventure, Action, Sci-Fiction</div>
-                            </div>
-                            <div class="book-text">
-                                <div class="w-80px">Publish date</div>
-                                <div>15-02-2006</div>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <a routerLink="/books/view" class="btn btn-sm btn-outline-secondary ms-auto mb-3 me-3">See more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="mb-2 mt-4 d-flex flex-row-reverse">
-        <div class="align-self-end">
-            <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" size="sm"/>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-3">
+        <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]" class="col">
+            <app-book-card></app-book-card>
         </div>
     </div>
 </section>
