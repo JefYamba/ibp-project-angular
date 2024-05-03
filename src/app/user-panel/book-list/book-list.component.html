@@ -1,33 +1,30 @@
-<section class="my-4 text-center book-cover">
-    <div class="card text-bg-dark" style="height: 300px">
-        <img ngSrc="./assets/images/books-wallpaper.jpg" class="card-img" alt="books wallpaper" fill>
-        <div class="card-img-overlay align-items-start justify-content-center h-100 d-flex flex-column ">
-            <h1 class="w-50 fw-light">Album example</h1>
-            <p class="w-50 align-self-start fs-4 text-wrap">
-                Something short and leading about the collection below—its contents, the creator, etc.
-            </p>
-        </div>
-    </div>
-</section>
-
-
 <section class="my-5 overflow-hidden">
     <div class="mb-2 d-flex justify-content-between align-items-center">
         <div class="fw-medium fs-4">Latest</div>
+
+    </div>
+    <div class="mb-2 d-flex justify-content-between align-items-center">
         <div>
-            <a routerLink="/books" class="btn btn-sm btn-outline-secondary ms-auto mb-3 me-3">
-                All Books
-            </a>
+            <input
+                class="form-control form-control-sm"
+                type="text" placeholder="Search" aria-label="Search"
+                style="width: 180px"
+            >
         </div>
+        <div>
+            <select class="form-select form-select-sm" aria-label="Small select example" style="width: 180px">
+                <option selected>Genre</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+
     </div>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3 row-cols-xl-3">
-        <div  *ngFor="let i of [1,2,3,4,5,6]" class="col">
-            <div class="card bg-body-tertiary">
-                <div class="book-card"
-                     [ngClass]="isOnMobile ? 'd-flex flex-column g-1' : 'row g-0'"
-                     [style.height.px]="isOnMobile ? 450 : 220 "
-                     routerLink="/books/view"
-                >
+        <div  *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]" class="col">
+            <div class="card  bg-body-tertiary">
+                <div [ngClass]="isOnMobile ? 'd-flex flex-column g-1' : 'row g-0'" [style.height.px]="isOnMobile ? 450 : 220 ">
                     <div [ngClass]="isOnMobile ? '' : 'col-md-4'" [style.height.%]="isOnMobile ? 60 : 100" >
                         <div style="height: 100%; width: 100%;position: relative">
                             <img ngSrc="./assets/images/BOCCHI.jpeg" class="object-fit-cover" alt="..." fill
@@ -51,12 +48,20 @@
                                 <div>15-02-2006</div>
                             </div>
                         </div>
+                        <div class="d-flex">
+                            <a routerLink="/books/view" class="btn btn-sm btn-outline-secondary ms-auto mb-3 me-3">See more</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-</section>
 
+    <div class="mb-2 mt-4 d-flex flex-row-reverse">
+        <div class="align-self-end">
+            <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" size="sm"/>
+        </div>
+    </div>
+</section>
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {AppConfig} from "../core/config/AppConfig";
 import {UserAvatarComponent} from "../shared/user-avatar/user-avatar.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-user-panel',
@@ -9,7 +10,8 @@ import {UserAvatarComponent} from "../shared/user-avatar/user-avatar.component";
     imports: [
         RouterOutlet,
         RouterLink,
-        UserAvatarComponent
+        UserAvatarComponent,
+        NgOptimizedImage
     ],
   templateUrl: './user-panel.component.html',
   styleUrl: './user-panel.component.css'

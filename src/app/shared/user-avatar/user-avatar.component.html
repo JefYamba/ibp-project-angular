@@ -9,30 +9,30 @@
              height="32"
              class="rounded-circle">
     </a>
-    <ul class="dropdown-menu text-small shadow dropdown-menu-end bg-body-tertiary">
+    <ul class="dropdown-menu text-small shadow dropdown-menu-end p-3" style="width: 220px">
         <li>
-            <a class="dropdown-item">
+            <a class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-person-bounding-box  me-2"></i>
-                Profile
+                <span>Profile</span>
             </a>
         </li>
         <li>
-            <a class="dropdown-item">
+            <a class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-chat-left-dots  me-2"></i>
-                Messages
+                <span>Messages</span>
             </a>
         </li>
         <li *ngIf="user.role == Role.ADMIN">
-            <a class="dropdown-item">
+            <a routerLink="admin" class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-speedometer  me-2"></i>
-                Admin Panel
+                <span>Admin Panel</span>
             </a>
         </li>
         <li><hr class="dropdown-divider"></li>
         <li>
-            <a class="dropdown-item">
+            <a class="dropdown-item text-danger d-flex gap-2 align-items-center">
                 <i class="bi bi-box-arrow-right  me-2"></i>
-                Sign out
+                <span>Sign out</span>
             </a>
         </li>
     </ul>

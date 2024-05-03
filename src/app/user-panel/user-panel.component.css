@@ -11,12 +11,12 @@
     }
 }
 
-.nav-item{
+.nav-item-offcanvas{
     border: none;
     border-radius: 5px;
 }
 
-.nav-item:hover{
+.nav-item-offcanvas:hover{
     background-color: #ccc;
     color: white;
 }

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {NgClass, NgOptimizedImage} from "@angular/common";
 import {AppConfig} from "../core/config/AppConfig";
@@ -17,8 +17,14 @@ import {UserAvatarComponent} from "../shared/user-avatar/user-avatar.component";
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.css'
 })
-export class AdminPanelComponent {
-    isToggled: boolean = false;
+export class AdminPanelComponent implements OnInit{
+    isToggled!: boolean;
+
+
+
+    ngOnInit(): void {
+        this.isToggled = window.innerWidth  < 768;
+    }
 
     constructor() { }
 

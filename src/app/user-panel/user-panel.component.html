@@ -1,5 +1,5 @@
-<div  style="min-width: max-content">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div style="height: 100vh" >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="min-width: max-content" >
         <div class="container">
             <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" class="hamburger-button me-3">
                 <i class="bi bi-list"></i>
@@ -18,10 +18,22 @@
             <app-user-avatar></app-user-avatar>
         </div>
     </nav>
-    <div class="container pt-2">
-        <router-outlet/>
+    <div class="container pt-2 mb-auto" style="min-height: 84%">
+        <router-outlet />
     </div>
+    <footer class=" py-md-4 border-top align-self-start">
+        <div class="container">
+            <div class="col-12 col-md d-flex gap-5 justify-content-between align-items-center">
+                <img class="mb-2" ngSrc="favicon.ico" alt="logo" width="24" height="24">
+                <div class="row row-cols-sm-1 row-cols-md-2">
+                    <small class="col d-block mb-3 text-body-secondary">Copy right © 2024</small>
+                    <small class="col d-block mb-3 text-body-secondary">joph.e.f.yamba&#64;gmail.com</small>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
+
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
     style="width: 280px"
@@ -32,13 +44,13 @@
     </div>
     <div class="offcanvas-body">
         <ul class="nav nav-pills flex-column mb-auto p-3 gap-1">
-            <li class="nav-item fw-medium">
+            <li class="nav-item nav-item-offcanvas fw-medium">
                 <a routerLink="/" class="nav-link link-body-emphasis d-flex flex-nowrap">
                     <i class="bi bi-house me-2"></i>
                     Home
                 </a>
             </li>
-            <li class="nav-item fw-medium">
+            <li class="nav-item nav-item-offcanvas fw-medium">
                 <a class="nav-link link-body-emphasis d-flex flex-nowrap">
                     <i class="bi bi-chat-left-dots  me-2"></i>
                     Messages
