@@ -21,7 +21,7 @@
         </div>
 
     </div>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3 row-cols-xl-3">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 g-3">
         <div  *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]" class="col">
             <div class="card  bg-body-tertiary">
                 <div [ngClass]="isOnMobile ? 'd-flex flex-column g-1' : 'row g-0'" [style.height.px]="isOnMobile ? 450 : 220 ">

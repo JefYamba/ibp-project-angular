@@ -20,43 +20,24 @@
             </a>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3 row-cols-xl-3">
-        <div  *ngFor="let i of [1,2,3,4,5,6]" class="col">
-            <div class="card bg-body-tertiary">
-                <div class="book-card"
-                     [ngClass]="isOnMobile ? 'd-flex flex-column g-1' : 'row g-0'"
-                     [style.height.px]="isOnMobile ? 450 : 220 "
-                     routerLink="/books/view"
-                >
-                    <div [ngClass]="isOnMobile ? '' : 'col-md-4'" [style.height.%]="isOnMobile ? 60 : 100" >
-                        <div style="height: 100%; width: 100%;position: relative">
-                            <img ngSrc="./assets/images/BOCCHI.jpeg" class="object-fit-cover" alt="..." fill
-                                 [ngClass]="isOnMobile? 'card-img-top rounded-top w-500' : 'img-fluid rounded-start'"
-                            >
-                        </div>
-                    </div>
-                    <div [ngClass]="isOnMobile ? '' : 'col-md-8'" [style.height.%]="isOnMobile ? 40 : 100"  class="d-flex flex-column justify-content-between position-relative">
-                        <div class="card-body">
-                            <h5 class="book-title">Book title</h5>
-                            <div class="book-text">
-                                <div class="w-80px">Author</div>
-                                <div>J.K. Rowling </div>
-                            </div>
-                            <div class="book-text">
-                                <div class="w-80px">Genre</div>
-                                <div>Adventure, Action, Sci-Fiction</div>
-                            </div>
-                            <div class="book-text">
-                                <div class="w-80px">Publish date</div>
-                                <div>15-02-2006</div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-3">
+        <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" class="col">
+            <div class="book-card">
+                <div class="book-card-image-container">
+                    <img class="book-card-image" ngSrc="assets/images/BOCCHI.jpeg" alt="" fill>
                 </div>
+                <div class="book-card-body">
+                    <div class="book-card-title">Book title</div>
+                    <div class="book-card-author">J.K. Rowling</div>
+                </div>
+                <div class="book-card-footer">
+                    <div class="book-card-comments">26 <i class="bi bi-chat-left-text"></i></div>
+                    <div class="book-card-likes">140 <i class="bi bi-heart"></i></div>
+                </div>
+
             </div>
         </div>
 
     </div>
 </section>
-
 

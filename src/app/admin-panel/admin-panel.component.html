@@ -48,7 +48,9 @@
     <div class="flex-fill">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <button (click)="toggleSidebar()" class="hamburger-button me-3">
+                <button (click)="toggleSidebar()" class="hamburger-button me-3"
+
+                >
                     <i class="bi bi-list"></i>
                 </button>
                 <app-user-avatar></app-user-avatar>
@@ -61,3 +63,27 @@
 </div>
 
 
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+     style="width: 280px"
+>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">{{AppConfig.appName}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-pills flex-column mb-auto p-3 gap-1">
+            <li class="nav-item nav-item-offcanvas fw-medium">
+                <a routerLink="/" class="nav-link link-body-emphasis d-flex flex-nowrap">
+                    <i class="bi bi-house me-2"></i>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item nav-item-offcanvas fw-medium">
+                <a class="nav-link link-body-emphasis d-flex flex-nowrap">
+                    <i class="bi bi-chat-left-dots  me-2"></i>
+                    Messages
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
