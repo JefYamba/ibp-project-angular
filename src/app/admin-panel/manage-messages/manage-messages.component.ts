@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -7,7 +7,8 @@ import {RouterLink} from "@angular/router";
   standalone: true,
     imports: [
         NgForOf,
-        RouterLink
+        RouterLink,
+        NgOptimizedImage
     ],
   templateUrl: './manage-messages.component.html',
   styleUrl: './manage-messages.component.css'

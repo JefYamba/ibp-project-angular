@@ -1,0 +1,19 @@
+.border-left-primary {
+    border-left: 5px solid #0D6EFD;
+}
+
+.border-left-success {
+    border-left: 5px solid #198754;
+}
+
+.border-left-info {
+    border-left: 5px solid #0DCAF0;
+}
+
+.border-left-warning {
+    border-left: 5px solid #FFC107;
+}
+
+.text-card{
+    color: #888;
+}

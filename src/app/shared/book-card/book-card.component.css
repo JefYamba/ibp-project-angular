@@ -31,31 +31,21 @@
 }
 
 .book-card-title{
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     border-bottom: 1px solid #5e5e5e;
 }
-.book-card-author{
-    font-size: 13px;
-    color: #666666;
-    margin-top: 3px;
-    font-weight: 400;
-}
 
-.book-card-footer{
+.book-card-content{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    font-size: 12px;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    align-items: start;
+    font-size: 11px;
     font-style: italic;
     color: #666666;
-    margin-top: 3px;
     font-weight: 400;
-}
-
-.book-card-footer i {
-    margin-left: 5px;
 }
 
 .book-card::before,
