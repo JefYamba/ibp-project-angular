@@ -1,0 +1,58 @@
+
+.sidebar{
+    width: 280px;
+    transition: width 0.3s ease-in-out;
+    min-height: 100%;
+    position: sticky;
+}
+
+.sidebar-expanded {
+    width: 280px;
+}
+.sidebar-collapsed {
+    width: 0;
+}
+
+
+.btn-close{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.admin-panel{
+    height: 40px;
+    align-content: center;
+}
+
+.hamburger-button{
+    background-color: transparent;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: #999;
+    border-radius: 50%;
+}
+.hamburger-button:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+@media screen and (min-width: 1080px){
+    .hamburger-button{
+        display: none;
+    }
+    .sidebar{
+        min-width: 280px;
+    }
+}
+
+@media screen and (max-width: 1079px){
+    .admin-panel{
+        display: none;
+    }
+}

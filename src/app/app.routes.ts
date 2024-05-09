@@ -1,21 +1,22 @@
 import { Routes } from '@angular/router';
-import {UserPanelComponent} from "./user-panel/user-panel.component";
-import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
-import {LoginComponent} from "./login/login.component";
-import {HomeComponent} from "./user-panel/home/home.component";
-import {DashboardComponent} from "./admin-panel/dashboard/dashboard.component";
-import {BookListComponent} from "./user-panel/book-list/book-list.component";
-import {BookViewComponent} from "./user-panel/book-view/book-view.component";
-import {AnnouncementListComponent} from "./user-panel/announcement-list/announcement-list.component";
-import {ManageUsersComponent} from "./admin-panel/manage-users/manage-users.component";
-import {ManageBooksComponent} from "./admin-panel/manage-books/manage-books.component";
-import {ManageAnnouncementsComponent} from "./admin-panel/manage-announcements/manage-announcements.component";
-import {ManageMessagesComponent} from "./admin-panel/manage-messages/manage-messages.component";
-import {UserMessagesComponent} from "./user-panel/user-messages/user-messages.component";
-import {EditUserComponent} from "./admin-panel/edit-user/edit-user.component";
-import {EditMessageComponent} from "./admin-panel/edit-message/edit-message.component";
-import {EditBookComponent} from "./admin-panel/edit-book/edit-book.component";
-import {EditAnnouncementComponent} from "./admin-panel/edit-announcement/edit-announcement.component";
+import {UserPanelComponent} from "./pages/user-panel/user-panel.component";
+import {HomeComponent} from "./pages/user-panel/home/home.component";
+import {BookListComponent} from "./pages/user-panel/book-list/book-list.component";
+import {BookViewComponent} from "./pages/user-panel/book-view/book-view.component";
+import {AnnouncementListComponent} from "./pages/user-panel/announcement-list/announcement-list.component";
+import {EditUserComponent} from "./pages/admin-panel/edit-user/edit-user.component";
+import {EditMessageComponent} from "./pages/admin-panel/edit-message/edit-message.component";
+import {UserMessagesComponent} from "./pages/user-panel/user-messages/user-messages.component";
+import {AdminPanelComponent} from "./pages/admin-panel/admin-panel.component";
+import {DashboardComponent} from "./pages/admin-panel/dashboard/dashboard.component";
+import {ManageUsersComponent} from "./pages/admin-panel/manage-users/manage-users.component";
+import {ManageBooksComponent} from "./pages/admin-panel/manage-books/manage-books.component";
+import {ManageAnnouncementsComponent} from "./pages/admin-panel/manage-announcements/manage-announcements.component";
+import {ManageMessagesComponent} from "./pages/admin-panel/manage-messages/manage-messages.component";
+import {EditBookComponent} from "./pages/admin-panel/edit-book/edit-book.component";
+import {EditAnnouncementComponent} from "./pages/admin-panel/edit-announcement/edit-announcement.component";
+import {LoginComponent} from "./pages/login/login.component";
+
 
 export const routes: Routes = [
     {
@@ -51,4 +52,5 @@ export const routes: Routes = [
         ]
     },
     {path:"login", component: LoginComponent},
+    {path:"**", component: LoginComponent},
 ];

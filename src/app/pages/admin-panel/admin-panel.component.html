@@ -1,0 +1,35 @@
+<div class="d-flex align-items-stretch" style="min-height: 100vh;">
+    <div
+        class="bg-body-tertiary sidebar overflow-hidden"
+        [ngClass]=" isToggled ? 'sidebar-collapsed': 'sidebar-expanded'"
+    >
+        <app-admin-nav></app-admin-nav>
+    </div>
+    <div class="flex-fill">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="admin-panel">
+                    <span class="fw-medium fs-6" >Admin</span>
+                </div>
+                <button
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" class="hamburger-button me-3"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <app-user-avatar class="ms-auto"></app-user-avatar>
+            </div>
+        </nav>
+        <div class="p-3" style="min-height: calc(100vh - 56px); max-height: calc(100vh - 56px); overflow-y: scroll">
+            <router-outlet/>
+        </div>
+    </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+     style="width: 280px"
+>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <app-admin-nav></app-admin-nav>
+</div>
