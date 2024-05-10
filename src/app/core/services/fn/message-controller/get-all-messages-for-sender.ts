@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
+import { PageMessageResponse } from '../../models/page-message-response';
 
 export interface GetAllMessagesForSender$Params {
   sender_id: number;
@@ -14,7 +14,7 @@ export interface GetAllMessagesForSender$Params {
   size?: number;
 }
 
-export function getAllMessagesForSender(http: HttpClient, rootUrl: string, params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function getAllMessagesForSender(http: HttpClient, rootUrl: string, params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
   const rb = new RequestBuilder(rootUrl, getAllMessagesForSender.PATH, 'get');
   if (params) {
     rb.path('sender_id', params.sender_id, {});
@@ -27,7 +27,7 @@ export function getAllMessagesForSender(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<PageMessageResponse>;
     })
   );
 }

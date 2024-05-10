@@ -9,15 +9,16 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
+import { AnnouncementResponse } from '../models/announcement-response';
 import { delete3 } from '../fn/announcement-controller/delete-3';
 import { Delete3$Params } from '../fn/announcement-controller/delete-3';
 import { get3 } from '../fn/announcement-controller/get-3';
 import { Get3$Params } from '../fn/announcement-controller/get-3';
 import { getAnnouncements } from '../fn/announcement-controller/get-announcements';
 import { GetAnnouncements$Params } from '../fn/announcement-controller/get-announcements';
+import { PageAnnouncementResponse } from '../models/page-announcement-response';
 import { register3 } from '../fn/announcement-controller/register-3';
 import { Register3$Params } from '../fn/announcement-controller/register-3';
-import { ResponseDto } from '../models/response-dto';
 import { update3 } from '../fn/announcement-controller/update-3';
 import { Update3$Params } from '../fn/announcement-controller/update-3';
 
@@ -40,7 +41,7 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAnnouncements$Response(params?: GetAnnouncements$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAnnouncements$Response(params?: GetAnnouncements$Params, context?: HttpContext): Observable<StrictHttpResponse<PageAnnouncementResponse>> {
     return getAnnouncements(this.http, this.rootUrl, params, context);
   }
 
@@ -54,9 +55,9 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAnnouncements(params?: GetAnnouncements$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAnnouncements(params?: GetAnnouncements$Params, context?: HttpContext): Observable<PageAnnouncementResponse> {
     return this.getAnnouncements$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageAnnouncementResponse>): PageAnnouncementResponse => r.body)
     );
   }
 
@@ -73,7 +74,7 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update3$Response(params: Update3$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  update3$Response(params: Update3$Params, context?: HttpContext): Observable<StrictHttpResponse<AnnouncementResponse>> {
     return update3(this.http, this.rootUrl, params, context);
   }
 
@@ -87,9 +88,9 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update3(params: Update3$Params, context?: HttpContext): Observable<ResponseDto> {
+  update3(params: Update3$Params, context?: HttpContext): Observable<AnnouncementResponse> {
     return this.update3$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<AnnouncementResponse>): AnnouncementResponse => r.body)
     );
   }
 
@@ -106,7 +107,7 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register3$Response(params: Register3$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  register3$Response(params: Register3$Params, context?: HttpContext): Observable<StrictHttpResponse<AnnouncementResponse>> {
     return register3(this.http, this.rootUrl, params, context);
   }
 
@@ -120,9 +121,9 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register3(params: Register3$Params, context?: HttpContext): Observable<ResponseDto> {
+  register3(params: Register3$Params, context?: HttpContext): Observable<AnnouncementResponse> {
     return this.register3$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<AnnouncementResponse>): AnnouncementResponse => r.body)
     );
   }
 
@@ -139,7 +140,7 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get3$Response(params: Get3$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  get3$Response(params: Get3$Params, context?: HttpContext): Observable<StrictHttpResponse<AnnouncementResponse>> {
     return get3(this.http, this.rootUrl, params, context);
   }
 
@@ -153,9 +154,9 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get3(params: Get3$Params, context?: HttpContext): Observable<ResponseDto> {
+  get3(params: Get3$Params, context?: HttpContext): Observable<AnnouncementResponse> {
     return this.get3$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<AnnouncementResponse>): AnnouncementResponse => r.body)
     );
   }
 
@@ -172,7 +173,7 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete3$Response(params: Delete3$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  delete3$Response(params: Delete3$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
     return delete3(this.http, this.rootUrl, params, context);
   }
 
@@ -186,9 +187,9 @@ export class AnnouncementControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete3(params: Delete3$Params, context?: HttpContext): Observable<ResponseDto> {
+  delete3(params: Delete3$Params, context?: HttpContext): Observable<string> {
     return this.delete3$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<string>): string => r.body)
     );
   }
 

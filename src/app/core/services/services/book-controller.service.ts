@@ -9,6 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
+import { BookResponse } from '../models/book-response';
 import { delete2 } from '../fn/book-controller/delete-2';
 import { Delete2$Params } from '../fn/book-controller/delete-2';
 import { get2 } from '../fn/book-controller/get-2';
@@ -17,9 +18,9 @@ import { getAllBooks } from '../fn/book-controller/get-all-books';
 import { GetAllBooks$Params } from '../fn/book-controller/get-all-books';
 import { getAllLatestBooks } from '../fn/book-controller/get-all-latest-books';
 import { GetAllLatestBooks$Params } from '../fn/book-controller/get-all-latest-books';
+import { PageBookResponse } from '../models/page-book-response';
 import { register2 } from '../fn/book-controller/register-2';
 import { Register2$Params } from '../fn/book-controller/register-2';
-import { ResponseDto } from '../models/response-dto';
 import { setImageCover } from '../fn/book-controller/set-image-cover';
 import { SetImageCover$Params } from '../fn/book-controller/set-image-cover';
 import { update2 } from '../fn/book-controller/update-2';
@@ -44,7 +45,7 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllBooks$Response(params?: GetAllBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllBooks$Response(params?: GetAllBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<PageBookResponse>> {
     return getAllBooks(this.http, this.rootUrl, params, context);
   }
 
@@ -58,9 +59,9 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllBooks(params?: GetAllBooks$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllBooks(params?: GetAllBooks$Params, context?: HttpContext): Observable<PageBookResponse> {
     return this.getAllBooks$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageBookResponse>): PageBookResponse => r.body)
     );
   }
 
@@ -77,7 +78,7 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update2$Response(params: Update2$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  update2$Response(params: Update2$Params, context?: HttpContext): Observable<StrictHttpResponse<BookResponse>> {
     return update2(this.http, this.rootUrl, params, context);
   }
 
@@ -91,9 +92,9 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update2(params: Update2$Params, context?: HttpContext): Observable<ResponseDto> {
+  update2(params: Update2$Params, context?: HttpContext): Observable<BookResponse> {
     return this.update2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<BookResponse>): BookResponse => r.body)
     );
   }
 
@@ -110,7 +111,7 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register2$Response(params: Register2$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  register2$Response(params: Register2$Params, context?: HttpContext): Observable<StrictHttpResponse<BookResponse>> {
     return register2(this.http, this.rootUrl, params, context);
   }
 
@@ -124,9 +125,9 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register2(params: Register2$Params, context?: HttpContext): Observable<ResponseDto> {
+  register2(params: Register2$Params, context?: HttpContext): Observable<BookResponse> {
     return this.register2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<BookResponse>): BookResponse => r.body)
     );
   }
 
@@ -143,7 +144,7 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get2$Response(params: Get2$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  get2$Response(params: Get2$Params, context?: HttpContext): Observable<StrictHttpResponse<BookResponse>> {
     return get2(this.http, this.rootUrl, params, context);
   }
 
@@ -157,9 +158,9 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get2(params: Get2$Params, context?: HttpContext): Observable<ResponseDto> {
+  get2(params: Get2$Params, context?: HttpContext): Observable<BookResponse> {
     return this.get2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<BookResponse>): BookResponse => r.body)
     );
   }
 
@@ -176,7 +177,7 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  setImageCover$Response(params: SetImageCover$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  setImageCover$Response(params: SetImageCover$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
     return setImageCover(this.http, this.rootUrl, params, context);
   }
 
@@ -190,9 +191,9 @@ export class BookControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  setImageCover(params: SetImageCover$Params, context?: HttpContext): Observable<ResponseDto> {
+  setImageCover(params: SetImageCover$Params, context?: HttpContext): Observable<string> {
     return this.setImageCover$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<string>): string => r.body)
     );
   }
 
@@ -209,7 +210,7 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete2$Response(params: Delete2$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  delete2$Response(params: Delete2$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
     return delete2(this.http, this.rootUrl, params, context);
   }
 
@@ -223,9 +224,9 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete2(params: Delete2$Params, context?: HttpContext): Observable<ResponseDto> {
+  delete2(params: Delete2$Params, context?: HttpContext): Observable<string> {
     return this.delete2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<string>): string => r.body)
     );
   }
 
@@ -242,7 +243,7 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllLatestBooks$Response(params?: GetAllLatestBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllLatestBooks$Response(params?: GetAllLatestBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<PageBookResponse>> {
     return getAllLatestBooks(this.http, this.rootUrl, params, context);
   }
 
@@ -256,9 +257,9 @@ export class BookControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllLatestBooks(params?: GetAllLatestBooks$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllLatestBooks(params?: GetAllLatestBooks$Params, context?: HttpContext): Observable<PageBookResponse> {
     return this.getAllLatestBooks$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageBookResponse>): PageBookResponse => r.body)
     );
   }
 

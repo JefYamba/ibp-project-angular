@@ -6,15 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ChangePwRequestDto } from '../../models/change-pw-request-dto';
-import { ResponseDto } from '../../models/response-dto';
+import { ChangePasswordRequest } from '../../models/change-password-request';
 
 export interface ChangePassword$Params {
   user_id: number;
-      body: ChangePwRequestDto
+      body: ChangePasswordRequest
 }
 
-export function changePassword(http: HttpClient, rootUrl: string, params: ChangePassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function changePassword(http: HttpClient, rootUrl: string, params: ChangePassword$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
   const rb = new RequestBuilder(rootUrl, changePassword.PATH, 'put');
   if (params) {
     rb.path('user_id', params.user_id, {});
@@ -26,7 +25,7 @@ export function changePassword(http: HttpClient, rootUrl: string, params: Change
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<string>;
     })
   );
 }

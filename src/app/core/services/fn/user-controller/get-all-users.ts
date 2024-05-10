@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
+import { PageUserResponse } from '../../models/page-user-response';
 
 export interface GetAllUsers$Params {
   q?: string;
@@ -14,7 +14,7 @@ export interface GetAllUsers$Params {
   size?: number;
 }
 
-export function getAllUsers(http: HttpClient, rootUrl: string, params?: GetAllUsers$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function getAllUsers(http: HttpClient, rootUrl: string, params?: GetAllUsers$Params, context?: HttpContext): Observable<StrictHttpResponse<PageUserResponse>> {
   const rb = new RequestBuilder(rootUrl, getAllUsers.PATH, 'get');
   if (params) {
     rb.query('q', params.q, {});
@@ -27,7 +27,7 @@ export function getAllUsers(http: HttpClient, rootUrl: string, params?: GetAllUs
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<PageUserResponse>;
     })
   );
 }

@@ -6,7 +6,6 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
 
 export interface SetImageProfile$Params {
   user_id: number;
@@ -15,7 +14,7 @@ export interface SetImageProfile$Params {
 }
 }
 
-export function setImageProfile(http: HttpClient, rootUrl: string, params: SetImageProfile$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function setImageProfile(http: HttpClient, rootUrl: string, params: SetImageProfile$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
   const rb = new RequestBuilder(rootUrl, setImageProfile.PATH, 'post');
   if (params) {
     rb.path('user_id', params.user_id, {});
@@ -27,7 +26,7 @@ export function setImageProfile(http: HttpClient, rootUrl: string, params: SetIm
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<string>;
     })
   );
 }

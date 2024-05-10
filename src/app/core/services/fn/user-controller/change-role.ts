@@ -6,14 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
 
 export interface ChangeRole$Params {
   user_id: number;
       body: 'USER' | 'ADMIN'
 }
 
-export function changeRole(http: HttpClient, rootUrl: string, params: ChangeRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function changeRole(http: HttpClient, rootUrl: string, params: ChangeRole$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
   const rb = new RequestBuilder(rootUrl, changeRole.PATH, 'put');
   if (params) {
     rb.path('user_id', params.user_id, {});
@@ -25,7 +24,7 @@ export function changeRole(http: HttpClient, rootUrl: string, params: ChangeRole
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<string>;
     })
   );
 }

@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
+import { MessageResponse } from '../../models/message-response';
 
 export interface Get1$Params {
   message_id: number;
 }
 
-export function get1(http: HttpClient, rootUrl: string, params: Get1$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function get1(http: HttpClient, rootUrl: string, params: Get1$Params, context?: HttpContext): Observable<StrictHttpResponse<MessageResponse>> {
   const rb = new RequestBuilder(rootUrl, get1.PATH, 'get');
   if (params) {
     rb.path('message_id', params.message_id, {});
@@ -23,7 +23,7 @@ export function get1(http: HttpClient, rootUrl: string, params: Get1$Params, con
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<MessageResponse>;
     })
   );
 }

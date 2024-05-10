@@ -8,7 +8,7 @@ import { UserControllerService } from './services/user-controller.service';
 import { MessageControllerService } from './services/message-controller.service';
 import { BookControllerService } from './services/book-controller.service';
 import { AnnouncementControllerService } from './services/announcement-controller.service';
-import { AuthControllerService } from './services/auth-controller.service';
+import { AuthentificationControllerService } from './services/authentification-controller.service';
 import { ImageControllerService } from './services/image-controller.service';
 
 /**
@@ -23,7 +23,7 @@ import { ImageControllerService } from './services/image-controller.service';
     MessageControllerService,
     BookControllerService,
     AnnouncementControllerService,
-    AuthControllerService,
+    AuthentificationControllerService,
     ImageControllerService,
     ApiConfiguration
   ],

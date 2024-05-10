@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
+import { PageBookResponse } from '../../models/page-book-response';
 
 export interface GetAllBooks$Params {
   searchKey?: string;
@@ -14,7 +14,7 @@ export interface GetAllBooks$Params {
   size?: number;
 }
 
-export function getAllBooks(http: HttpClient, rootUrl: string, params?: GetAllBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function getAllBooks(http: HttpClient, rootUrl: string, params?: GetAllBooks$Params, context?: HttpContext): Observable<StrictHttpResponse<PageBookResponse>> {
   const rb = new RequestBuilder(rootUrl, getAllBooks.PATH, 'get');
   if (params) {
     rb.query('searchKey', params.searchKey, {});
@@ -27,7 +27,7 @@ export function getAllBooks(http: HttpClient, rootUrl: string, params?: GetAllBo
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<PageBookResponse>;
     })
   );
 }

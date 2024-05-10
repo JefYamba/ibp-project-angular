@@ -70,7 +70,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageUserResponse"
                                 }
                             }
                         }
@@ -88,7 +88,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AppUserRequestDTO"
+                                "$ref": "#/components/schemas/UserRequest"
                             }
                         }
                     },
@@ -100,7 +100,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -110,7 +110,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -120,7 +120,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -130,7 +130,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -148,7 +148,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AppUserRequestDTO"
+                                "$ref": "#/components/schemas/UserRequest"
                             }
                         }
                     },
@@ -160,7 +160,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -170,7 +170,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -180,7 +180,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -227,7 +227,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -237,7 +237,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -268,7 +268,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ChangePWRequestDTO"
+                                "$ref": "#/components/schemas/ChangePasswordRequest"
                             }
                         }
                     },
@@ -280,7 +280,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -290,7 +290,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -300,7 +300,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -310,7 +310,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -354,7 +354,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -372,7 +372,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/MessageRequestDTO"
+                                "$ref": "#/components/schemas/MessageRequest"
                             }
                         }
                     },
@@ -384,7 +384,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -394,7 +394,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -404,7 +404,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -422,7 +422,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/MessageRequestDTO"
+                                "$ref": "#/components/schemas/MessageRequest"
                             }
                         }
                     },
@@ -434,7 +434,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -444,7 +444,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -454,7 +454,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -507,7 +507,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageBookResponse"
                                 }
                             }
                         }
@@ -525,7 +525,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/BookRequestDTO"
+                                "$ref": "#/components/schemas/BookRequest"
                             }
                         }
                     },
@@ -537,7 +537,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -547,7 +547,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -557,7 +557,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -575,7 +575,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/BookRequestDTO"
+                                "$ref": "#/components/schemas/BookRequest"
                             }
                         }
                     },
@@ -587,7 +587,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -597,7 +597,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -607,7 +607,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -651,7 +651,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageAnnouncementResponse"
                                 }
                             }
                         }
@@ -669,7 +669,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AnnouncementRequestDTO"
+                                "$ref": "#/components/schemas/AnnouncementRequest"
                             }
                         }
                     },
@@ -681,7 +681,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -691,7 +691,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -709,7 +709,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AnnouncementRequestDTO"
+                                "$ref": "#/components/schemas/AnnouncementRequest"
                             }
                         }
                     },
@@ -721,7 +721,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -731,7 +731,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -764,7 +764,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -774,7 +774,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -784,7 +784,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/UserResponse"
                                 }
                             }
                         }
@@ -833,7 +833,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -843,7 +843,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -853,7 +853,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -863,7 +863,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -894,7 +894,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -904,7 +904,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -914,7 +914,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -947,7 +947,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -957,7 +957,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/BookResponse"
                                 }
                             }
                         }
@@ -1006,7 +1006,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1016,7 +1016,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1026,7 +1026,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1057,7 +1057,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1067,7 +1067,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1077,7 +1077,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1088,7 +1088,7 @@
         "/ibp/v1/auth/login": {
             "post": {
                 "tags": [
-                    "auth-controller"
+                    "authentification-controller"
                 ],
                 "summary": "Authenticate",
                 "description": "Tries to authenticate a user",
@@ -1097,7 +1097,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/LoginRequest"
+                                "$ref": "#/components/schemas/AuthentificationRequest"
                             }
                         }
                     },
@@ -1109,7 +1109,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AuthentificationResponse"
                                 }
                             }
                         }
@@ -1119,7 +1119,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AuthentificationResponse"
                                 }
                             }
                         }
@@ -1152,7 +1152,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -1162,7 +1162,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -1172,7 +1172,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/MessageResponse"
                                 }
                             }
                         }
@@ -1203,7 +1203,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1213,7 +1213,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1266,7 +1266,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -1276,7 +1276,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -1329,7 +1329,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -1339,7 +1339,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -1383,7 +1383,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageMessageResponse"
                                 }
                             }
                         }
@@ -1611,7 +1611,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/PageBookResponse"
                                 }
                             }
                         }
@@ -1644,7 +1644,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -1654,7 +1654,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
                             }
                         }
@@ -1685,7 +1685,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1695,7 +1695,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseDTO"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1706,7 +1706,12 @@
     },
     "components": {
         "schemas": {
-            "AppUserRequestDTO": {
+            "UserRequest": {
+                "required": [
+                    "email",
+                    "firstName",
+                    "lastName"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1741,109 +1746,57 @@
                     }
                 }
             },
-            "ResponseDTO": {
+            "UserResponse": {
                 "type": "object",
                 "properties": {
-                    "timeStamp": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "statusCode": {
+                    "id": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                     },
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "100 CONTINUE",
-                            "101 SWITCHING_PROTOCOLS",
-                            "102 PROCESSING",
-                            "103 EARLY_HINTS",
-                            "103 CHECKPOINT",
-                            "200 OK",
-                            "201 CREATED",
-                            "202 ACCEPTED",
-                            "203 NON_AUTHORITATIVE_INFORMATION",
-                            "204 NO_CONTENT",
-                            "205 RESET_CONTENT",
-                            "206 PARTIAL_CONTENT",
-                            "207 MULTI_STATUS",
-                            "208 ALREADY_REPORTED",
-                            "226 IM_USED",
-                            "300 MULTIPLE_CHOICES",
-                            "301 MOVED_PERMANENTLY",
-                            "302 FOUND",
-                            "302 MOVED_TEMPORARILY",
-                            "303 SEE_OTHER",
-                            "304 NOT_MODIFIED",
-                            "305 USE_PROXY",
-                            "307 TEMPORARY_REDIRECT",
-                            "308 PERMANENT_REDIRECT",
-                            "400 BAD_REQUEST",
-                            "401 UNAUTHORIZED",
-                            "402 PAYMENT_REQUIRED",
-                            "403 FORBIDDEN",
-                            "404 NOT_FOUND",
-                            "405 METHOD_NOT_ALLOWED",
-                            "406 NOT_ACCEPTABLE",
-                            "407 PROXY_AUTHENTICATION_REQUIRED",
-                            "408 REQUEST_TIMEOUT",
-                            "409 CONFLICT",
-                            "410 GONE",
-                            "411 LENGTH_REQUIRED",
-                            "412 PRECONDITION_FAILED",
-                            "413 PAYLOAD_TOO_LARGE",
-                            "413 REQUEST_ENTITY_TOO_LARGE",
-                            "414 URI_TOO_LONG",
-                            "414 REQUEST_URI_TOO_LONG",
-                            "415 UNSUPPORTED_MEDIA_TYPE",
-                            "416 REQUESTED_RANGE_NOT_SATISFIABLE",
-                            "417 EXPECTATION_FAILED",
-                            "418 I_AM_A_TEAPOT",
-                            "419 INSUFFICIENT_SPACE_ON_RESOURCE",
-                            "420 METHOD_FAILURE",
-                            "421 DESTINATION_LOCKED",
-                            "422 UNPROCESSABLE_ENTITY",
-                            "423 LOCKED",
-                            "424 FAILED_DEPENDENCY",
-                            "425 TOO_EARLY",
-                            "426 UPGRADE_REQUIRED",
-                            "428 PRECONDITION_REQUIRED",
-                            "429 TOO_MANY_REQUESTS",
-                            "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
-                            "451 UNAVAILABLE_FOR_LEGAL_REASONS",
-                            "500 INTERNAL_SERVER_ERROR",
-                            "501 NOT_IMPLEMENTED",
-                            "502 BAD_GATEWAY",
-                            "503 SERVICE_UNAVAILABLE",
-                            "504 GATEWAY_TIMEOUT",
-                            "505 HTTP_VERSION_NOT_SUPPORTED",
-                            "506 VARIANT_ALSO_NEGOTIATES",
-                            "507 INSUFFICIENT_STORAGE",
-                            "508 LOOP_DETECTED",
-                            "509 BANDWIDTH_LIMIT_EXCEEDED",
-                            "510 NOT_EXTENDED",
-                            "511 NETWORK_AUTHENTICATION_REQUIRED"
-                        ]
-                    },
-                    "message": {
+                    "firstName": {
                         "type": "string"
                     },
-                    "data": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "object"
-                        }
+                    "lastName": {
+                        "type": "string"
                     },
-                    "errors": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "object"
-                        }
+                    "gender": {
+                        "type": "string",
+                        "enum": [
+                            "MALE",
+                            "FEMALE"
+                        ]
+                    },
+                    "birthDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "USER",
+                            "ADMIN"
+                        ]
                     }
                 }
             },
-            "ChangePWRequestDTO": {
+            "ChangePasswordRequest": {
+                "required": [
+                    "confirmPassword",
+                    "newPassword",
+                    "oldPassword"
+                ],
                 "type": "object",
                 "properties": {
                     "oldPassword": {
@@ -1857,7 +1810,11 @@
                     }
                 }
             },
-            "MessageRequestDTO": {
+            "MessageRequest": {
+                "required": [
+                    "content",
+                    "senderId"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1868,6 +1825,7 @@
                         "type": "string"
                     },
                     "senderId": {
+                        "minimum": 1,
                         "type": "integer",
                         "format": "int64"
                     },
@@ -1877,7 +1835,34 @@
                     }
                 }
             },
-            "BookRequestDTO": {
+            "MessageResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "sender": {
+                        "$ref": "#/components/schemas/UserResponse"
+                    },
+                    "receiver": {
+                        "$ref": "#/components/schemas/UserResponse"
+                    }
+                }
+            },
+            "BookRequest": {
+                "required": [
+                    "author",
+                    "genre",
+                    "title"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1908,7 +1893,44 @@
                     }
                 }
             },
-            "AnnouncementRequestDTO": {
+            "BookResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "publisher": {
+                        "type": "string"
+                    },
+                    "publicationDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "isbn": {
+                        "type": "string"
+                    },
+                    "genre": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AnnouncementRequest": {
+                "required": [
+                    "content"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1920,7 +1942,27 @@
                     }
                 }
             },
-            "LoginRequest": {
+            "AnnouncementResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "AuthentificationRequest": {
+                "required": [
+                    "password",
+                    "username"
+                ],
                 "type": "object",
                 "properties": {
                     "username": {
@@ -1928,6 +1970,259 @@
                     },
                     "password": {
                         "type": "string"
+                    }
+                }
+            },
+            "AuthentificationResponse": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PageUserResponse": {
+                "type": "object",
+                "properties": {
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/UserResponse"
+                        }
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortObject"
+                        }
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PageableObject": {
+                "type": "object",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortObject"
+                        }
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "unpaged": {
+                        "type": "boolean"
+                    },
+                    "paged": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "SortObject": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string"
+                    },
+                    "nullHandling": {
+                        "type": "string"
+                    },
+                    "ascending": {
+                        "type": "boolean"
+                    },
+                    "property": {
+                        "type": "string"
+                    },
+                    "ignoreCase": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PageMessageResponse": {
+                "type": "object",
+                "properties": {
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageResponse"
+                        }
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortObject"
+                        }
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PageBookResponse": {
+                "type": "object",
+                "properties": {
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BookResponse"
+                        }
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortObject"
+                        }
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PageAnnouncementResponse": {
+                "type": "object",
+                "properties": {
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AnnouncementResponse"
+                        }
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortObject"
+                        }
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
+                    "empty": {
+                        "type": "boolean"
                     }
                 }
             }

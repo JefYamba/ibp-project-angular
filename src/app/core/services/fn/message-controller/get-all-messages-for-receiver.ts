@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ResponseDto } from '../../models/response-dto';
+import { PageMessageResponse } from '../../models/page-message-response';
 
 export interface GetAllMessagesForReceiver$Params {
   receiver_id: number;
@@ -14,7 +14,7 @@ export interface GetAllMessagesForReceiver$Params {
   size?: number;
 }
 
-export function getAllMessagesForReceiver(http: HttpClient, rootUrl: string, params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function getAllMessagesForReceiver(http: HttpClient, rootUrl: string, params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
   const rb = new RequestBuilder(rootUrl, getAllMessagesForReceiver.PATH, 'get');
   if (params) {
     rb.path('receiver_id', params.receiver_id, {});
@@ -27,7 +27,7 @@ export function getAllMessagesForReceiver(http: HttpClient, rootUrl: string, par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<PageMessageResponse>;
     })
   );
 }

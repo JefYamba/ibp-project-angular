@@ -21,9 +21,10 @@ import { getAllMessagesForReceiver } from '../fn/message-controller/get-all-mess
 import { GetAllMessagesForReceiver$Params } from '../fn/message-controller/get-all-messages-for-receiver';
 import { getAllMessagesForSender } from '../fn/message-controller/get-all-messages-for-sender';
 import { GetAllMessagesForSender$Params } from '../fn/message-controller/get-all-messages-for-sender';
+import { MessageResponse } from '../models/message-response';
+import { PageMessageResponse } from '../models/page-message-response';
 import { register1 } from '../fn/message-controller/register-1';
 import { Register1$Params } from '../fn/message-controller/register-1';
-import { ResponseDto } from '../models/response-dto';
 import { update1 } from '../fn/message-controller/update-1';
 import { Update1$Params } from '../fn/message-controller/update-1';
 
@@ -46,7 +47,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessages$Response(params?: GetAllMessages$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllMessages$Response(params?: GetAllMessages$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
     return getAllMessages(this.http, this.rootUrl, params, context);
   }
 
@@ -60,9 +61,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessages(params?: GetAllMessages$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllMessages(params?: GetAllMessages$Params, context?: HttpContext): Observable<PageMessageResponse> {
     return this.getAllMessages$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageMessageResponse>): PageMessageResponse => r.body)
     );
   }
 
@@ -79,7 +80,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update1$Response(params: Update1$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  update1$Response(params: Update1$Params, context?: HttpContext): Observable<StrictHttpResponse<MessageResponse>> {
     return update1(this.http, this.rootUrl, params, context);
   }
 
@@ -93,9 +94,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update1(params: Update1$Params, context?: HttpContext): Observable<ResponseDto> {
+  update1(params: Update1$Params, context?: HttpContext): Observable<MessageResponse> {
     return this.update1$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<MessageResponse>): MessageResponse => r.body)
     );
   }
 
@@ -112,7 +113,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register1$Response(params: Register1$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  register1$Response(params: Register1$Params, context?: HttpContext): Observable<StrictHttpResponse<MessageResponse>> {
     return register1(this.http, this.rootUrl, params, context);
   }
 
@@ -126,9 +127,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  register1(params: Register1$Params, context?: HttpContext): Observable<ResponseDto> {
+  register1(params: Register1$Params, context?: HttpContext): Observable<MessageResponse> {
     return this.register1$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<MessageResponse>): MessageResponse => r.body)
     );
   }
 
@@ -145,7 +146,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get1$Response(params: Get1$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  get1$Response(params: Get1$Params, context?: HttpContext): Observable<StrictHttpResponse<MessageResponse>> {
     return get1(this.http, this.rootUrl, params, context);
   }
 
@@ -159,9 +160,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  get1(params: Get1$Params, context?: HttpContext): Observable<ResponseDto> {
+  get1(params: Get1$Params, context?: HttpContext): Observable<MessageResponse> {
     return this.get1$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<MessageResponse>): MessageResponse => r.body)
     );
   }
 
@@ -178,7 +179,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete1$Response(params: Delete1$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  delete1$Response(params: Delete1$Params, context?: HttpContext): Observable<StrictHttpResponse<string>> {
     return delete1(this.http, this.rootUrl, params, context);
   }
 
@@ -192,9 +193,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  delete1(params: Delete1$Params, context?: HttpContext): Observable<ResponseDto> {
+  delete1(params: Delete1$Params, context?: HttpContext): Observable<string> {
     return this.delete1$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<string>): string => r.body)
     );
   }
 
@@ -211,7 +212,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForSender$Response(params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllMessagesForSender$Response(params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
     return getAllMessagesForSender(this.http, this.rootUrl, params, context);
   }
 
@@ -225,9 +226,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForSender(params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllMessagesForSender(params: GetAllMessagesForSender$Params, context?: HttpContext): Observable<PageMessageResponse> {
     return this.getAllMessagesForSender$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageMessageResponse>): PageMessageResponse => r.body)
     );
   }
 
@@ -244,7 +245,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForReceiver$Response(params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllMessagesForReceiver$Response(params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
     return getAllMessagesForReceiver(this.http, this.rootUrl, params, context);
   }
 
@@ -258,9 +259,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForReceiver(params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllMessagesForReceiver(params: GetAllMessagesForReceiver$Params, context?: HttpContext): Observable<PageMessageResponse> {
     return this.getAllMessagesForReceiver$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageMessageResponse>): PageMessageResponse => r.body)
     );
   }
 
@@ -277,7 +278,7 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForAdmins$Response(params?: GetAllMessagesForAdmins$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  getAllMessagesForAdmins$Response(params?: GetAllMessagesForAdmins$Params, context?: HttpContext): Observable<StrictHttpResponse<PageMessageResponse>> {
     return getAllMessagesForAdmins(this.http, this.rootUrl, params, context);
   }
 
@@ -291,9 +292,9 @@ export class MessageControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAllMessagesForAdmins(params?: GetAllMessagesForAdmins$Params, context?: HttpContext): Observable<ResponseDto> {
+  getAllMessagesForAdmins(params?: GetAllMessagesForAdmins$Params, context?: HttpContext): Observable<PageMessageResponse> {
     return this.getAllMessagesForAdmins$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<PageMessageResponse>): PageMessageResponse => r.body)
     );
   }
 

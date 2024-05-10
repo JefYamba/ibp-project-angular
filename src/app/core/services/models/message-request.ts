@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface MessageRequestDto {
-  content?: string;
+export interface MessageRequest {
+  content: string;
   id?: number;
   receiverId?: number;
-  senderId?: number;
+  senderId: number;
 }

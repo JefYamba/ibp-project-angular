@@ -9,12 +9,12 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { login } from '../fn/auth-controller/login';
-import { Login$Params } from '../fn/auth-controller/login';
-import { ResponseDto } from '../models/response-dto';
+import { AuthentificationResponse } from '../models/authentification-response';
+import { login } from '../fn/authentification-controller/login';
+import { Login$Params } from '../fn/authentification-controller/login';
 
 @Injectable({ providedIn: 'root' })
-export class AuthControllerService extends BaseService {
+export class AuthentificationControllerService extends BaseService {
   constructor(config: ApiConfiguration, http: HttpClient) {
     super(config, http);
   }
@@ -32,7 +32,7 @@ export class AuthControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  login$Response(params: Login$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  login$Response(params: Login$Params, context?: HttpContext): Observable<StrictHttpResponse<AuthentificationResponse>> {
     return login(this.http, this.rootUrl, params, context);
   }
 
@@ -46,9 +46,9 @@ export class AuthControllerService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  login(params: Login$Params, context?: HttpContext): Observable<ResponseDto> {
+  login(params: Login$Params, context?: HttpContext): Observable<AuthentificationResponse> {
     return this.login$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ResponseDto>): ResponseDto => r.body)
+      map((r: StrictHttpResponse<AuthentificationResponse>): AuthentificationResponse => r.body)
     );
   }
 

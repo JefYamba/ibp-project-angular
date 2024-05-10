@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { BookRequestDto } from '../../models/book-request-dto';
-import { ResponseDto } from '../../models/response-dto';
+import { BookRequest } from '../../models/book-request';
+import { BookResponse } from '../../models/book-response';
 
 export interface Update2$Params {
-      body: BookRequestDto
+      body: BookRequest
 }
 
-export function update2(http: HttpClient, rootUrl: string, params: Update2$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+export function update2(http: HttpClient, rootUrl: string, params: Update2$Params, context?: HttpContext): Observable<StrictHttpResponse<BookResponse>> {
   const rb = new RequestBuilder(rootUrl, update2.PATH, 'put');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,7 +24,7 @@ export function update2(http: HttpClient, rootUrl: string, params: Update2$Param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ResponseDto>;
+      return r as StrictHttpResponse<BookResponse>;
     })
   );
 }
