@@ -7,41 +7,43 @@
         </div>
     </div>
     <div class="table-responsive" >
-        <table class="table table-striped table-hover table-bordered align-middle">
+        <table class="table  table-hover table-bordered align-middle">
             <thead>
             <tr>
                 <th class="text-center" style="width: 40px" scope="col">Image</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>Gender</th>
                 <th class="text-center" style="width: 120px">Role</th>
                 <th class="text-center"  scope="col"  style="width: 130px">Actions</th>
             </tr>
             </thead>
-            <tbody>
-            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13]">
+            <tbody *ngIf="usersPage">
+            <tr *ngFor="let user of usersPage.content">
                 <td class="text-center">
-                    <img ngSrc="{{'./assets/images/default.png' }}"
-                         alt=""
+                    <img ngSrc="{{ user.image ? user.image : './assets/images/default.png' }}"
+                         alt="profile image"
                          width="32"
                          height="32"
                          class="rounded"
                          priority
                     >
                 </td>
-                <td>firstname</td>
-                <td>lastname</td>
-                <td>email</td>
-                <td class="d-flex justify-content-center align-items-center"><span class="rounded text-bg-danger px-2 py-1">ADMIN</span></td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.gender}}</td>
+                <td class="d-flex justify-content-center align-items-center"><span [ngClass]="user.role == 'ADMIN' ? 'text-bg-danger' : 'text-bg-secondary' " class="rounded px-2 py-1">{{user.role}}</span></td>
                 <td >
                     <div class="d-flex justify-content-around align-items-center"   style="width: 130px">
-                        <button [routerLink]="['/admin/message', i]" class="btn btn-sm btn-outline-info">
+                        <button [routerLink]="['/admin/message', user.id]" class="btn btn-sm btn-outline-info">
                             <i class="bi bi-chat-left"></i>
                         </button>
-                        <button  [routerLink]="['/admin/user', i]" class="btn btn-sm btn-outline-success">
+                        <button  [routerLink]="['/admin/user', user.id]" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-pen"></i>
                         </button>
-                        <button  class="btn btn-sm btn-outline-danger">
+                        <button (click)="deleteUser(user.id)"  class="btn btn-sm btn-outline-danger">
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
@@ -50,21 +52,4 @@
             </tbody>
         </table>
     </div>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination mb-0 justify-content-center  pagination-sm">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
 </section>

@@ -20,9 +20,9 @@
             </a>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 row-cols-xl-6 g-3">
-        <div *ngFor="let i of [1,2,3,4,5,6]" class="col">
-            <app-book-card></app-book-card>
+    <div *ngIf="booksList"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 row-cols-xl-6 g-3">
+        <div *ngFor="let book of booksList" class="col">
+            <app-book-card [book]="book"></app-book-card>
         </div>
     </div>
 </section>
@@ -45,9 +45,9 @@
             </a>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-xl-3 g-3">
-        <div *ngFor="let i of [1,2,3]" class="col">
-            <app-announcement-card></app-announcement-card>
+    <div *ngIf="announcementsList" class="row row-cols-1 row-cols-xl-3 g-3">
+        <div *ngFor="let announcement of announcementsList" class="col d-flex align-items-stretch position-relative">
+            <app-announcement-card [announcement]="announcement" class="align-self-stretch w-100"></app-announcement-card>
         </div>
     </div>
 </section>

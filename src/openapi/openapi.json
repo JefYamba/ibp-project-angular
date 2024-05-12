@@ -1,4 +1,3 @@
-
 {
     "openapi": "3.0.1",
     "info": {
@@ -28,7 +27,7 @@
         "/ibp/v1/users": {
             "get": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Get all the users [For admin only]",
                 "description": "Fetch a page of users",
@@ -79,7 +78,7 @@
             },
             "put": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Update a user [For admin or current logged user only]",
                 "description": "modifies an existing user",
@@ -139,7 +138,7 @@
             },
             "post": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Add a user [For admin only]",
                 "description": "register a new user",
@@ -191,7 +190,7 @@
         "/ibp/v1/users/{user_id}/update_role": {
             "put": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Change user's role [For admin only]",
                 "description": "Change user's role",
@@ -248,7 +247,7 @@
         "/ibp/v1/users/{user_id}/update_password": {
             "put": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Change user's password [For current logged user only]",
                 "description": "Change user's password",
@@ -321,7 +320,7 @@
         "/ibp/v1/messages": {
             "get": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Get all the messages [For admin only]",
                 "description": "Fetch a page of messages",
@@ -363,7 +362,7 @@
             },
             "put": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Update a message [For current logged user as sender only]",
                 "description": "modifies an existing message",
@@ -413,7 +412,7 @@
             },
             "post": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Send a message [For current logged user as sender only]",
                 "description": "send a new message",
@@ -465,7 +464,7 @@
         "/ibp/v1/books": {
             "get": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Get all the books",
                 "description": "Fetch a page of books",
@@ -516,7 +515,7 @@
             },
             "put": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Update a book  [For admin only]",
                 "description": "modifies an existing book",
@@ -566,7 +565,7 @@
             },
             "post": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Add a book",
                 "description": "register a new book  [For admin only]",
@@ -618,7 +617,7 @@
         "/ibp/v1/announcements": {
             "get": {
                 "tags": [
-                    "announcement-controller"
+                    "Announcement"
                 ],
                 "summary": "Get all the announcements",
                 "description": "Fetch a page of announcements",
@@ -660,7 +659,7 @@
             },
             "put": {
                 "tags": [
-                    "announcement-controller"
+                    "Announcement"
                 ],
                 "summary": "Update an announcement  [For admin only]",
                 "description": "modifies an existing announcement",
@@ -700,7 +699,7 @@
             },
             "post": {
                 "tags": [
-                    "announcement-controller"
+                    "Announcement"
                 ],
                 "summary": "Make an announcement  [For admin only]",
                 "description": "register an announcement",
@@ -742,7 +741,7 @@
         "/ibp/v1/users/{user_id}": {
             "get": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Get user by Id [For admin or current logged user only]",
                 "description": "fetch a user using the id",
@@ -793,7 +792,7 @@
             },
             "post": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Register user image profile [For admin or current logged user only]",
                 "description": "set an image profile for an existing user",
@@ -872,7 +871,7 @@
             },
             "delete": {
                 "tags": [
-                    "user-controller"
+                    "User"
                 ],
                 "summary": "Delete a user [For admin only]",
                 "description": "Delete an existing user",
@@ -925,7 +924,7 @@
         "/ibp/v1/books/{book_id}": {
             "get": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Get book by Id",
                 "description": "fetch a book using the id",
@@ -966,7 +965,7 @@
             },
             "post": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Register book image cover  [For admin only]",
                 "description": "set an image cover for an existing book",
@@ -1035,7 +1034,7 @@
             },
             "delete": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Delete a book [For admin only]",
                 "description": "Delete an existing book",
@@ -1088,7 +1087,7 @@
         "/ibp/v1/auth/login": {
             "post": {
                 "tags": [
-                    "authentification-controller"
+                    "Authentification"
                 ],
                 "summary": "Authenticate",
                 "description": "Tries to authenticate a user",
@@ -1130,7 +1129,7 @@
         "/ibp/v1/messages/{message_id}": {
             "get": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Get message by Id [For admin or current logged user as sender/receiver only]",
                 "description": "fetch a message using the id",
@@ -1181,7 +1180,7 @@
             },
             "delete": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Delete a message [For admin only]",
                 "description": "Delete an existing message",
@@ -1224,7 +1223,7 @@
         "/ibp/v1/messages/sender/{sender_id}": {
             "get": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Get messages by sender  [For admin or current logged user as sender only]",
                 "description": "Fetch a page of messages by sender using sender id",
@@ -1287,7 +1286,7 @@
         "/ibp/v1/messages/receiver/{receiver_id}": {
             "get": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Get messages by receiver [For admin or current logged user as receiver only]",
                 "description": "Fetch a page of messages by receiver using receiver id",
@@ -1350,7 +1349,7 @@
         "/ibp/v1/messages/admins": {
             "get": {
                 "tags": [
-                    "message-controller"
+                    "Message"
                 ],
                 "summary": "Get all the admin messages [For admin only]",
                 "description": "Fetch a page of messages for admins",
@@ -1391,22 +1390,21 @@
                 }
             }
         },
-        "/ibp/v1/images/user/{userId}": {
+        "/ibp/v1/images/user/{imageName}": {
             "get": {
                 "tags": [
-                    "image-controller"
+                    "Image"
                 ],
                 "summary": "Get User image profile [For admin or current logged only]",
                 "description": "fetch a user's image profile using the image complete name",
                 "operationId": "getUrlImageUser",
                 "parameters": [
                     {
-                        "name": "userId",
+                        "name": "imageName",
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "integer",
-                            "format": "int64"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1483,22 +1481,21 @@
                 }
             }
         },
-        "/ibp/v1/images/book/{bookId}": {
+        "/ibp/v1/images/book/{imageName}": {
             "get": {
                 "tags": [
-                    "image-controller"
+                    "Image"
                 ],
                 "summary": "Get Book image cover",
                 "description": "fetch a book's image cover using the image complete name",
                 "operationId": "getUrlImageBook",
                 "parameters": [
                     {
-                        "name": "bookId",
+                        "name": "imageName",
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "integer",
-                            "format": "int64"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1578,7 +1575,7 @@
         "/ibp/v1/books/latest": {
             "get": {
                 "tags": [
-                    "book-controller"
+                    "Book"
                 ],
                 "summary": "Get all the books ordered by the latest",
                 "description": "Fetch a page of books ordered by the latest",
@@ -1622,7 +1619,7 @@
         "/ibp/v1/announcements/{announcement_id}": {
             "get": {
                 "tags": [
-                    "announcement-controller"
+                    "Announcement"
                 ],
                 "summary": "Get announcement by Id",
                 "description": "fetch a announcement using the id",
@@ -1663,7 +1660,7 @@
             },
             "delete": {
                 "tags": [
-                    "announcement-controller"
+                    "Announcement"
                 ],
                 "summary": "Delete an announcement  [For admin only]",
                 "description": "Delete an existing announcement",
@@ -2012,15 +2009,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
-                    },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2043,18 +2040,18 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "pageSize": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "pageNumber": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "unpaged": {
-                        "type": "boolean"
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "paged": {
+                        "type": "boolean"
+                    },
+                    "unpaged": {
                         "type": "boolean"
                     }
                 }
@@ -2110,15 +2107,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
-                    },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2159,15 +2156,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
-                    },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2208,15 +2205,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
-                    },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"

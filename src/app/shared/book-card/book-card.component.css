@@ -14,7 +14,7 @@
 
 .book-card-image-container{
     position: relative;
-    height: 70%;
+    height: 65%;
     border-radius: 5px;
     width: 100%;
     overflow: hidden;
@@ -26,11 +26,17 @@
 
 
 .book-card-body{
+    max-height: 35%;
+    overflow: hidden;
     padding: 12px;
     margin-bottom: auto;
 }
 
 .book-card-title{
+    max-width: 100%;
+    text-wrap: nowrap;
+    padding-right: 10px;
+    overflow: hidden;
     font-size: 13px;
     font-weight: 500;
     border-bottom: 1px solid #5e5e5e;

@@ -1,12 +1,12 @@
-<div class="book-card text-decoration-none text-black" [routerLink]="['/book/view']">
+<div *ngIf="book" class="book-card text-decoration-none text-black h-100 w-100" [routerLink]="['/book/view', book.id]">
     <div class="book-card-image-container">
-        <img class="book-card-image" ngSrc="assets/images/BOCCHI.jpeg" alt="" priority fill>
+        <img class="book-card-image" ngSrc="{{book.image ? book.image : './assets/images/book-default-cover.jpg' }}"  alt="" priority fill>
     </div>
     <div class="book-card-body">
-        <div class="book-card-title">Book title</div>
+        <div class="book-card-title">{{book.title}}</div>
         <div class="book-card-content">
-            <div>J.K. Rowling</div>
-            <div>Romance, Action, Sci-fiction</div>
+            <div>{{book.author}}</div>
+            <div>{{book.genre}}</div>
         </div>
     </div>
 

@@ -23,9 +23,10 @@ export const routes: Routes = [
         path:"",
         component: UserPanelComponent,
         children:[
-            {path:"", component: HomeComponent},
+            {path:"", redirectTo: "home", pathMatch: "full"},
+            {path:"home", component: HomeComponent},
             {path:"books", component: BookListComponent},
-            {path:"book/view", component: BookViewComponent}, // view book details
+            {path:"book/view/:id", component: BookViewComponent}, // view book details
             {path:"announcements", component: AnnouncementListComponent},
             {path:"profile", component: EditUserComponent}, // current user's profile
             {path:"message", component: EditMessageComponent}, // current user's profile
@@ -43,7 +44,7 @@ export const routes: Routes = [
             {path:"messages", component: ManageMessagesComponent}, // manage messages sent to admins
             {path:"user", component: EditUserComponent}, // create
             {path:"user/:id", component: EditUserComponent}, // update
-            {path:"message", component: EditMessageComponent}, // for user To send a message to all the admins; receiver is not required
+            //{path:"message", component: EditMessageComponent}, // for user To send a message to all the admins; receiver is not required
             {path:"message/:receiver", component: EditMessageComponent}, // for admin To send a message to a user; receiver is required
             {path:"book", component: EditBookComponent},// create
             {path:"book/:id", component: EditBookComponent},// update
@@ -52,5 +53,5 @@ export const routes: Routes = [
         ]
     },
     {path:"login", component: LoginComponent},
-    {path:"**", component: LoginComponent},
+    {path:"**", redirectTo: "login", pathMatch: "full"},
 ];

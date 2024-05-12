@@ -2,13 +2,10 @@
     <a  class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
         data-bs-toggle="dropdown" aria-expanded="false">
 
-        <span class="me-1 fs-6 fw-normal user-name">{{user.firstName}} {{user.lastname}}</span>
-        <img ngSrc="{{user.image ? user.image : './assets/images/default.png' }}"
-             alt=""
-             width="32"
-             height="32"
-             class="rounded-circle"
-             priority
+        <span class="me-1 fs-6 fw-normal user-name">{{loggedUser.firstName}} {{loggedUser.lastName}}</span>
+        <img ngSrc="{{loggedUser.image ? loggedUser.image : './assets/images/default.png' }}"
+             alt="image profile" width="32" height="32" class="rounded-circle" priority
+             style="object-fit: cover"
         >
     </a>
     <ul class="dropdown-menu text-small shadow dropdown-menu-end p-3" style="width: 220px">
@@ -24,7 +21,7 @@
                 <span>Messages</span>
             </a>
         </li>
-        <li *ngIf="user.role == Role.ADMIN">
+        <li *ngIf="loggedUser.role == 'ADMIN'">
             <a  [routerLink]="['/admin']"  class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-speedometer  me-2"></i>
                 <span>Admin Panel</span>

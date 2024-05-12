@@ -1,8 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {User} from "../../core/models/User";
+import {DummyUser} from "../../core/models/DummyUser";
 import {Role} from "../../core/models/Role";
 import {RouterLink} from "@angular/router";
+import {UserResponse} from "../../core/openapi-services/models/user-response";
+import {LoggedUserService} from "../../core/services/logged-user.service";
 
 @Component({
   selector: 'app-user-avatar',
@@ -16,13 +18,19 @@ import {RouterLink} from "@angular/router";
   styleUrl: './user-avatar.component.css'
 })
 export class UserAvatarComponent implements OnInit{
+    loggedUser!: UserResponse;
+    user!: DummyUser;
 
+    constructor(private loggedUserService:LoggedUserService) {
+    }
 
-    @Input()
-    user!: User;
     ngOnInit(): void {
+
+        this.loggedUserService.getLoggedUser().subscribe(loggedUser => {
+            this.loggedUser = loggedUser;
+        })
+
         this.user = {firstName:"Joph Exauce Fouschard",lastname:"Yamba", role:Role.ADMIN, image:"./assets/images/Paimon.jpg"}
     }
 
-    protected readonly Role = Role;
 }
