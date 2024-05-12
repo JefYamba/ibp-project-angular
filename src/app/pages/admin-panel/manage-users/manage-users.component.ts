@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {NgClass, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {PageUserResponse} from "../../../core/openapi-services/models/page-user-response";
 import {UserService} from "../../../core/openapi-services/services/user.service";
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import {ToastService, ToastType} from "../../../core/services/toast.service";
+import {ToastComponent} from "../../../shared/toast/toast.component";
 
 @Component({
   selector: 'app-manage-users',
@@ -13,7 +16,9 @@ import {UserService} from "../../../core/openapi-services/services/user.service"
         RouterLink,
         NgOptimizedImage,
         NgIf,
-        NgClass
+        NgClass,
+        NgbToastModule,
+        ToastComponent
     ],
     providers:[
         HttpClient
@@ -21,22 +26,19 @@ import {UserService} from "../../../core/openapi-services/services/user.service"
   templateUrl: './manage-users.component.html',
   styleUrl: './manage-users.component.css'
 })
-export class ManageUsersComponent {
-
+export class ManageUsersComponent implements OnInit{
     usersPage!: PageUserResponse;
-    private ObservableInput: any;
 
-    constructor(private userService: UserService, private http: HttpClient) {}
+    constructor(private userService: UserService) {}
 
     ngOnInit(): void {
         this.getUsers();
     }
 
     getUsers(){
-        this.userService.getAllUsers({size:200})
+        this.userService.getAllUsers({size:1000})
             .subscribe({
                 next: userPage => {
-                    console.log(userPage)
                     this.usersPage = userPage;
                 }
             }
@@ -46,20 +48,36 @@ export class ManageUsersComponent {
 
     deleteUser(id: number | undefined) {
         if (id) {
-            this.userService.delete$Response({user_id : id})
+            this.userService.delete({user_id : id})
                 .subscribe({
                     next: response =>{
-                        alert({...response})
-                        console.log({...response})
-                        this.getUsers();
-                        //this.usersPage.content = this.usersPage.content?.filter(user => user.id !== id);
+                        this.toastMessage = response.message
+                        this.showToast(this.toastElement, ToastType.SUCCESS);
+                        this.usersPage.content = this.usersPage.content?.filter(user => user.id !== id);
                     },
                     error: err => {
-                        console.log(err.error.text);
-                        this.getUsers();
+                        this.toastMessage = err.error.message
+                        this.showToast(this.toastElement, ToastType.ERROR)
                     }
                 }
             )
+        }
+    }
+
+
+    // Handle toast
+    toastService = inject(ToastService);
+    @ViewChild('ToastTpl') toastElement!: TemplateRef<any>;
+    toastMessage: string | undefined = "";
+
+    showToast(template: TemplateRef<any>, type: ToastType) {
+        if (type === ToastType.SUCCESS){
+            this.toastService.show({ template, classname: 'bg-success text-light' });
+
+        } else if (type === ToastType.ERROR){
+            this.toastService.show({ template, classname: 'bg-danger text-light' });
+        } else {
+            this.toastService.show({ template });
         }
     }
 }

@@ -34,7 +34,13 @@
                 <td>{{user.lastName}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.gender}}</td>
-                <td class="d-flex justify-content-center align-items-center"><span [ngClass]="user.role == 'ADMIN' ? 'text-bg-danger' : 'text-bg-secondary' " class="rounded px-2 py-1">{{user.role}}</span></td>
+                <td class="d-flex justify-content-center align-items-center text-lowercase">
+                    <span [ngClass]="user.role == 'ADMIN' ? 'text-danger border-danger' : 'text-secondary border-secondary' "
+                          class="rounded border"
+                          style="width: 65px; text-align: center; padding: 2px 7px"
+                    >
+                        {{user.role }}
+                    </span></td>
                 <td >
                     <div class="d-flex justify-content-around align-items-center"   style="width: 130px">
                         <button [routerLink]="['/admin/message', user.id]" class="btn btn-sm btn-outline-info">
@@ -53,3 +59,6 @@
         </table>
     </div>
 </section>
+
+<ng-template #ToastTpl> {{toastMessage}} </ng-template>
+<app-toast aria-live="polite" aria-atomic="true"></app-toast>

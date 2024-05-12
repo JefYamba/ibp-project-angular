@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {DatePipe, NgForOf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {PageMessageResponse} from "../../../core/openapi-services/models/page-message-response";
 import {MessageService} from "../../../core/openapi-services/services/message.service";
 import {FormsModule} from "@angular/forms";
+import {ToastService, ToastType} from "../../../core/services/toast.service";
+import {ToastComponent} from "../../../shared/toast/toast.component";
 
 @Component({
   selector: 'app-manage-messages',
@@ -13,7 +15,8 @@ import {FormsModule} from "@angular/forms";
         RouterLink,
         NgOptimizedImage,
         FormsModule,
-        DatePipe
+        DatePipe,
+        ToastComponent
     ],
   templateUrl: './manage-messages.component.html',
   styleUrl: './manage-messages.component.css'
@@ -28,20 +31,53 @@ export class ManageMessagesComponent implements OnInit{
     }
 
     getAllMessages(){
-        this.messageService.getAllMessages({size:200}).subscribe((messagePage: PageMessageResponse) => {
-            this.messagesPage = messagePage;
-        });
+        this.messageService.getAllMessages({size:200})
+            .subscribe({
+                next: messagePage => {
+                    this.messagesPage = messagePage;
+                }
+            });
     }
     getAllAdminMessages(){
-        this.messageService.getAllMessagesForAdmins({size:200}).subscribe((messagePage: PageMessageResponse) => {
-            this.messagesPage = messagePage;
-        })
+        this.messageService.getAllMessagesForAdmins({size:200})
+            .subscribe({
+                next: messagePage => {
+                    this.messagesPage = messagePage;
+                }
+            })
     }
 
     deleteMessage(id: number | undefined) {
         if (id) {
-            this.messageService.delete1({message_id : id}).subscribe(value => value)
+            this.messageService.delete1({message_id : id})
+                .subscribe({
+                    next: response => {
+                        this.toastMessage = response.message
+                        this.showToast(this.toastElement, ToastType.SUCCESS);
+                        this.messagesPage.content = this.messagesPage.content?.filter(message => message.id !== id);
+                    },
+                    error: err => {
+                        this.toastMessage = err.error.message
+                        this.showToast(this.toastElement, ToastType.ERROR)
+                    }
+                })
         }
-        this.getAllMessages()
+    }
+
+
+    // Handle toast
+    toastService = inject(ToastService);
+    @ViewChild('ToastTpl') toastElement!: TemplateRef<any>;
+    toastMessage: string | undefined = "";
+
+    showToast(template: TemplateRef<any>, type: ToastType) {
+        if (type === ToastType.SUCCESS){
+            this.toastService.show({ template, classname: 'bg-success text-light' });
+
+        } else if (type === ToastType.ERROR){
+            this.toastService.show({ template, classname: 'bg-danger text-light' });
+        } else {
+            this.toastService.show({ template });
+        }
     }
 }

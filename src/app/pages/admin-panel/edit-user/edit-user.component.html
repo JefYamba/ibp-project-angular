@@ -1,6 +1,6 @@
 <div class="p-sm-2 p-md-4">
     <div class="row">
-        <div class="card col-lg-3 col-md-3 col-sm-4 col-12 p-3">
+        <div class="card col-sm-4 col-12 p-3">
             <div class="d-flex flex-column justify-content-center align-items-center gap-3">
                 <div class="rounded rounded-circle border-1 border-black position-relative overflow-hidden" (click)="input.click()" style="width: 100%; aspect-ratio: 300/300">
                     <img ngSrc="{{imageUrl}}" alt="img" fill style="object-fit: cover; cursor: pointer">
@@ -11,7 +11,7 @@
                 </button>
             </div>
         </div>
-        <div class="card col-lg-9 col-md-9 col-sm-8 col-12 p-3">
+        <div class="card col-sm-8 col-12 p-3">
             <nav>
                 <div class="nav nav-tabs">
                     <button (click)="changeViewState(ViewState.PROFILE)" [ngClass]="viewState == ViewState.PROFILE ? 'active': ''" class="nav-link">Profile</button>
