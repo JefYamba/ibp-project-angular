@@ -6,6 +6,7 @@ import {AnnouncementCardComponent} from "../../../shared/announcement-card/annou
 import {PageAnnouncementResponse} from "../../../core/openapi-services/models/page-announcement-response";
 import {AnnouncementService} from "../../../core/openapi-services/services/announcement.service";
 
+
 @Component({
   selector: 'app-announcement-list',
   standalone: true,

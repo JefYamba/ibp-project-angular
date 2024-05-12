@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DatePipe, NgIf, NgOptimizedImage} from "@angular/common";
 import {ActivatedRoute, RouterLink} from "@angular/router";
-import {BookService} from "../../../core/openapi-services/services/book.service";
 import {BookResponse} from "../../../core/openapi-services/models/book-response";
+import {BookService} from "../../../core/openapi-services/services/book.service";
 
 @Component({
   selector: 'app-book-view',

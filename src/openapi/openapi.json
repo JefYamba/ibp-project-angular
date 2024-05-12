@@ -226,7 +226,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -236,7 +236,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -279,7 +279,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -289,7 +289,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -299,7 +299,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -309,7 +309,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -832,7 +832,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -842,7 +842,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -852,7 +852,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -862,7 +862,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -893,7 +893,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -903,7 +903,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -913,7 +913,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1005,7 +1005,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1015,7 +1015,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1025,7 +1025,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1056,7 +1056,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1066,7 +1066,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1076,7 +1076,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1202,7 +1202,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1212,7 +1212,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1682,7 +1682,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1692,7 +1692,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
                             }
                         }
@@ -1785,6 +1785,14 @@
                             "USER",
                             "ADMIN"
                         ]
+                    }
+                }
+            },
+            "ConfirmationResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
                     }
                 }
             },
@@ -2009,15 +2017,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2048,10 +2056,10 @@
                         "type": "integer",
                         "format": "int32"
                     },
-                    "paged": {
+                    "unpaged": {
                         "type": "boolean"
                     },
-                    "unpaged": {
+                    "paged": {
                         "type": "boolean"
                     }
                 }
@@ -2107,15 +2115,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2156,15 +2164,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"
@@ -2205,15 +2213,15 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "numberOfElements": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "first": {
                         "type": "boolean"
                     },
                     "last": {
                         "type": "boolean"
+                    },
+                    "numberOfElements": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "pageable": {
                         "$ref": "#/components/schemas/PageableObject"

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { AppConfig } from '../../core/config/AppConfig';
-import {AuthentificationRequest} from "../../core/openapi-services/models/authentification-request";
 import {NgForOf, NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule, HttpErrorResponse} from "@angular/common/http";
-import {AuthentificationService} from "../../core/openapi-services/services/authentification.service";
 import {TokenService} from "../../core/services/token/token.service";
 import {LoggedUserService} from "../../core/services/logged-user.service";
+import {AuthentificationRequest} from "../../core/openapi-services/models/authentification-request";
+import {AuthentificationService} from "../../core/openapi-services/services";
 
 @Component({
   selector: 'app-login',

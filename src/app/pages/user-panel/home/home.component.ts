@@ -3,10 +3,11 @@ import {NgClass, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {BookCardComponent} from "../../../shared/book-card/book-card.component";
 import {AnnouncementCardComponent} from "../../../shared/announcement-card/announcement-card.component";
-import {BookService} from "../../../core/openapi-services/services/book.service";
-import {AnnouncementService} from "../../../core/openapi-services/services/announcement.service";
 import {BookResponse} from "../../../core/openapi-services/models/book-response";
 import {AnnouncementResponse} from "../../../core/openapi-services/models/announcement-response";
+import {AnnouncementService} from "../../../core/openapi-services/services/announcement.service";
+import {BookService} from "../../../core/openapi-services/services/book.service";
+
 
 @Component({
   selector: 'app-home',
