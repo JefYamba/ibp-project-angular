@@ -44,6 +44,7 @@ export class EditUserComponent implements OnInit{
     userImageFile: Blob | undefined;
     changePasswordRequest!: ChangePasswordRequest;
     roleRequest: RoleRequest = {role:'USER'};
+    isProfileLink!: boolean;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -55,6 +56,8 @@ export class EditUserComponent implements OnInit{
 
     ngOnInit(): void {
         this.viewState = ViewState.PROFILE
+
+        this.isProfileLink = this.router.url.includes('profile');
 
 
         this.loggedUserService.getLoggedUser().subscribe({
@@ -97,7 +100,6 @@ export class EditUserComponent implements OnInit{
 
         this.changePasswordRequest = { oldPassword:"", newPassword:"", confirmPassword:"" }
     }
-
 
     updateRole() {
         this.toastMessage.length = 0;
