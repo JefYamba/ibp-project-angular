@@ -7,6 +7,7 @@ import {UserService} from "../../../core/openapi-services/services/user.service"
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import {ToastService, ToastType} from "../../../core/services/toast.service";
 import {ToastComponent} from "../../../shared/toast/toast.component";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-manage-users',
@@ -18,7 +19,8 @@ import {ToastComponent} from "../../../shared/toast/toast.component";
         NgIf,
         NgClass,
         NgbToastModule,
-        ToastComponent
+        ToastComponent,
+        FormsModule
     ],
     providers:[
         HttpClient
@@ -28,6 +30,7 @@ import {ToastComponent} from "../../../shared/toast/toast.component";
 })
 export class ManageUsersComponent implements OnInit{
     usersPage!: PageUserResponse;
+    searchKeyWord: string = ""
 
     constructor(private userService: UserService) {}
 
@@ -36,13 +39,19 @@ export class ManageUsersComponent implements OnInit{
     }
 
     getUsers(){
-        this.userService.getAllUsers({size:1000})
+        this.userService.getAllUsers({q: this.searchKeyWord, size:1000})
             .subscribe({
                 next: userPage => {
                     this.usersPage = userPage;
                 }
             }
         );
+    }
+
+    onKeyUp(event: KeyboardEvent): void {
+        if (event.key === 'Enter') {
+            this.getUsers();
+        }
     }
 
 

@@ -2,8 +2,10 @@
     <div class="mb-2 d-flex align-items-center gap-2 justify-content-between">
         <div class="fw-medium fs-4">Manage Messages</div>
         <div class="d-flex gap-2">
-            <button (click)="getAllAdminMessages()" class="btn btn-outline-info btn-sm">Admins Messages</button>
-            <button (click)="getAllMessages()" class="btn btn-outline-secondary btn-sm">All Messages</button>
+            <select class="form-control form-control-sm" [(ngModel)]="listType"  (ngModelChange)="getMessages()" id="role" name="role" aria-label="Floating label select example">
+                <option  ngValue="ALL">All Messages</option>
+                <option ngValue="ADMIN">Admin Messages</option>
+            </select>
         </div>
     </div>
     <div class="mt-4 d-flex flex-column">

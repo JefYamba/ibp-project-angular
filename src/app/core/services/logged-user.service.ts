@@ -21,4 +21,11 @@ export class LoggedUserService {
       }
       return new Observable(observer => {})
     }
+
+    getUserId()  {
+        if (this.tokenService.token) {
+            return JSON.parse(atob(this.tokenService.token.split('.')[1])).id as number;
+        }
+        return 0;
+    }
 }

@@ -1,3 +1,4 @@
+
 <div class="p-sm-2 p-md-4">
     <div class="row">
         <div class="card col-sm-4 col-12 p-3">
@@ -16,8 +17,8 @@
             <nav>
                 <div class="nav nav-tabs">
                     <button (click)="changeViewState(ViewState.PROFILE)" [ngClass]="viewState == ViewState.PROFILE ? 'active': ''" class="nav-link">Profile</button>
-                    <button (click)="changeViewState(ViewState.PASSWORD)" [ngClass]="viewState == ViewState.PASSWORD ? 'active': ''" class="nav-link">Change Password</button>
-                    <button (click)="changeViewState(ViewState.SECURITY)" [ngClass]="viewState == ViewState.SECURITY ? 'active': ''" class="nav-link">Security</button>
+                    <button [disabled]="pageMode === 'ADD' || loggedUser.id !== userRequest.id"  (click)="changeViewState(ViewState.PASSWORD)" [ngClass]="viewState == ViewState.PASSWORD ? 'active': ''" class="nav-link">Change Password</button>
+                    <button [disabled]="pageMode === 'ADD' || loggedUser.role !== 'ADMIN'" (click)="changeViewState(ViewState.SECURITY)" [ngClass]="viewState == ViewState.SECURITY ? 'active': ''" class="nav-link">Security</button>
                 </div>
             </nav>
             <div class="tab-content p-3">
@@ -25,15 +26,15 @@
                     <form class="d-flex flex-column gap-3">
                         <div class="d-flex flex-column gap-3" style="min-height: 540px">
                             <div class="form-floating">
-                                <input type="email" class="form-control" [(ngModel)]="userRequest.email" id="email" name="email" placeholder="Email">
+                                <input type="email" class="form-control" [(ngModel)]="userRequest.email" id="email" name="email" placeholder="Email" required>
                                 <label for="email">Email</label>
                             </div>
                             <div class="form-floating">
-                                <input type="text" class="form-control" [(ngModel)]="userRequest.firstName" id="firstname" name="firstname" placeholder="Firstname">
+                                <input type="text" class="form-control" [(ngModel)]="userRequest.firstName" id="firstname" name="firstname" placeholder="Firstname" required>
                                 <label for="firstname">Firstname</label>
                             </div>
                             <div class="form-floating">
-                                <input type="text" class="form-control " [(ngModel)]="userRequest.lastName" id="lastname" name="lastname" placeholder="Lastname">
+                                <input type="text" class="form-control " [(ngModel)]="userRequest.lastName" id="lastname" name="lastname" placeholder="Lastname" required>
                                 <label for="lastname">Lastname</label>
                             </div>
                             <div class="form-floating">
@@ -65,20 +66,20 @@
                     <form class="d-flex flex-column gap-3">
                         <div class="d-flex flex-column gap-3" style="min-height: 540px" >
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="current_password" placeholder="Current password">
+                                <input type="password" [(ngModel)]="changePasswordRequest.oldPassword" class="form-control" name="current_password" id="current_password" placeholder="Current password">
                                 <label for="current_password">Current password</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="new_password" placeholder="New password">
+                                <input type="password" [(ngModel)]="changePasswordRequest.newPassword" class="form-control" name="new_password" id="new_password" placeholder="New password">
                                 <label for="new_password">New password</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="confirm_new_password" placeholder="Conform new password">
+                                <input type="password" [(ngModel)]="changePasswordRequest.confirmPassword" class="form-control" name="confirm_new_password" id="confirm_new_password" placeholder="Conform new password">
                                 <label for="confirm_new_password">Conform new password</label>
                             </div>
                         </div>
                         <div class="d-flex mt-5">
-                            <button type="submit" class="btn btn-primary ms-auto w-25">Save</button>
+                            <button (click)="changePassword()" type="submit" class="btn btn-primary ms-auto w-25">Save</button>
                         </div>
                     </form>
                 </div>
@@ -86,15 +87,12 @@
                     <form class="d-flex flex-column gap-3" >
                         <div class="d-flex flex-column gap-3" style="min-height: 540px">
                             <div class="form-floating">
-                                <select class="form-select" id="role" name="role" aria-label="Floating label select example">
-                                    <option selected value="USER">User</option>
-                                    <option value="ADMIN">Admin</option>
+                                <select class="form-select" [(ngModel)]="roleRequest.role" (ngModelChange)="updateRole()" id="role" name="role" aria-label="Floating label select example">
+                                    <option  ngValue="USER">User</option>
+                                    <option ngValue="ADMIN">Admin</option>
                                 </select>
                                 <label for="role">User Role</label>
                             </div>
-                        </div>
-                        <div class="d-flex mt-5">
-                            <button type="submit" class="btn btn-outline-primary ms-auto w-25">Save</button>
                         </div>
                     </form>
                 </div>

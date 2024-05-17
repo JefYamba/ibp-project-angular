@@ -22,31 +22,34 @@ import {ToastComponent} from "../../../shared/toast/toast.component";
   styleUrl: './manage-messages.component.css'
 })
 export class ManageMessagesComponent implements OnInit{
+
+    listType: 'ADMIN'|'ALL' = 'ALL'
     messagesPage!: PageMessageResponse;
 
     constructor(private messageService: MessageService) {}
 
     ngOnInit(): void {
-        this.getAllMessages();
+        this.getMessages();
     }
 
-    getAllMessages(){
-        this.messageService.getAllMessages({size:200})
-            .subscribe({
-                next: messagePage => {
-                    this.messagesPage = messagePage;
-                }
-            });
-    }
-    getAllAdminMessages(){
-        this.messageService.getAllMessagesForAdmins({size:200})
-            .subscribe({
-                next: messagePage => {
-                    this.messagesPage = messagePage;
-                }
-            })
-    }
 
+    getMessages() {
+        if (this.listType === 'ADMIN'){
+            this.messageService.getAllMessagesForAdmins({size:200})
+                .subscribe({
+                    next: messagePage => {
+                        this.messagesPage = messagePage;
+                    }
+                })
+        } else {
+            this.messageService.getAllMessages({size:200})
+                .subscribe({
+                    next: messagePage => {
+                        this.messagesPage = messagePage;
+                    }
+                });
+        }
+    }
     deleteMessage(id: number | undefined) {
         if (id) {
             this.messageService.delete1({message_id : id})
@@ -80,4 +83,5 @@ export class ManageMessagesComponent implements OnInit{
             this.toastService.show({ template });
         }
     }
+
 }

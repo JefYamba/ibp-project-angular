@@ -15,6 +15,7 @@ export { PageAnnouncementResponse } from './models/page-announcement-response';
 export { PageBookResponse } from './models/page-book-response';
 export { PageMessageResponse } from './models/page-message-response';
 export { PageUserResponse } from './models/page-user-response';
+export { RoleRequest } from './models/role-request';
 export { SortObject } from './models/sort-object';
 export { UserRequest } from './models/user-request';
 export { UserResponse } from './models/user-response';

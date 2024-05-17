@@ -2,7 +2,14 @@
     <div class="mb-2 d-flex flex-column gap-2">
         <div class="fw-medium fs-4">Manage Books</div>
         <div class="d-flex gap-2 justify-content-between">
-            <input class="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search" style="width: 180px">
+            <div class="d-flex gap-1">
+                <select class="form-control form-control-sm" [(ngModel)]="listType"  (ngModelChange)="getBooks()" id="role" name="role" aria-label="Floating label select example">
+                    <option  ngValue="ALL">All Book</option>
+                    <option ngValue="LATEST">Latest(20)</option>
+                </select>
+                <input *ngIf="listType==='ALL'"  (keyup)="onKeyUp($event)"  [(ngModel)]="searchKeyWord" class="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search" style="width: 180px">
+            </div>
+
             <button [routerLink]="['/admin/book']" class="btn btn-sm btn-outline-secondary">Add book</button>
         </div>
     </div>

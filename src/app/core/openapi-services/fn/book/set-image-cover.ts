@@ -8,18 +8,18 @@ import { RequestBuilder } from '../../request-builder';
 
 import { ConfirmationResponse } from '../../models/confirmation-response';
 
-export interface SetImageCover$Png$Params {
+export interface SetImageCover$Params {
   book_id: number;
       body?: {
 'image': Blob;
 }
 }
 
-export function setImageCover$Png(http: HttpClient, rootUrl: string, params: SetImageCover$Png$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-  const rb = new RequestBuilder(rootUrl, setImageCover$Png.PATH, 'post');
+export function setImageCover(http: HttpClient, rootUrl: string, params: SetImageCover$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+  const rb = new RequestBuilder(rootUrl, setImageCover.PATH, 'post');
   if (params) {
     rb.path('book_id', params.book_id, {});
-    rb.body(params.body, 'image/png');
+    rb.body(params.body, 'multipart/form-data');
   }
 
   return http.request(
@@ -32,4 +32,4 @@ export function setImageCover$Png(http: HttpClient, rootUrl: string, params: Set
   );
 }
 
-setImageCover$Png.PATH = '/ibp/v1/books/{book_id}';
+setImageCover.PATH = '/ibp/v1/books/{book_id}';

@@ -6,6 +6,7 @@ import {ToastService, ToastType} from "../../../core/services/toast.service";
 import {ToastComponent} from "../../../shared/toast/toast.component";
 import {PageBookResponse} from "../../../core/openapi-services/models/page-book-response";
 import {BookService} from "../../../core/openapi-services/services/book.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-manage-books',
@@ -16,13 +17,15 @@ import {BookService} from "../../../core/openapi-services/services/book.service"
         RouterLink,
         ToastComponent,
         NgIf,
-        DatePipe
+        DatePipe,
+        FormsModule
     ],
   templateUrl: './manage-books.component.html',
   styleUrl: './manage-books.component.css'
 })
 export class ManageBooksComponent implements OnInit{
-
+    searchKeyWord: string = ""
+    listType: 'LATEST'|'ALL' = 'ALL'
     booksPage!: PageBookResponse;
 
     constructor(private bookService: BookService) {}
@@ -32,15 +35,32 @@ export class ManageBooksComponent implements OnInit{
     }
 
     getBooks(){
-        this.bookService.getAllLatestBooks({size:1000})
-            .subscribe({
-                    next: bookPage => {
-                        this.booksPage = bookPage;
+
+        if (this.listType === "LATEST"){
+
+            this.bookService.getAllLatestBooks({size:20})
+                .subscribe({
+                        next: bookPage => {
+                            this.booksPage = bookPage;
+                        }
                     }
-                }
-            );
+                );
+        } else {
+            this.bookService.getAllBooks({searchKey: this.searchKeyWord,size:1000})
+                .subscribe({
+                        next: bookPage => {
+                            this.booksPage = bookPage;
+                        }
+                    }
+                );
+        }
     }
 
+    onKeyUp(event: KeyboardEvent): void {
+        if (event.key === 'Enter') {
+            this.getBooks();
+        }
+    }
 
     deleteBook(id: number | undefined) {
         if (id) {

@@ -23,10 +23,8 @@ import { GetAllUsers$Params } from '../fn/user/get-all-users';
 import { PageUserResponse } from '../models/page-user-response';
 import { register } from '../fn/user/register';
 import { Register$Params } from '../fn/user/register';
-import { setImageProfile$Jpeg } from '../fn/user/set-image-profile-jpeg';
-import { SetImageProfile$Jpeg$Params } from '../fn/user/set-image-profile-jpeg';
-import { setImageProfile$Png } from '../fn/user/set-image-profile-png';
-import { SetImageProfile$Png$Params } from '../fn/user/set-image-profile-png';
+import { setImageProfile } from '../fn/user/set-image-profile';
+import { SetImageProfile$Params } from '../fn/user/set-image-profile';
 import { update } from '../fn/user/update';
 import { Update$Params } from '../fn/user/update';
 import { UserResponse } from '../models/user-response';
@@ -244,12 +242,12 @@ export class UserService extends BaseService {
    * set an image profile for an existing user
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `setImageProfile$Png()` instead.
+   * To access only the response body, use `setImageProfile()` instead.
    *
-   * This method sends `image/png` and handles request body of type `image/png`.
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
    */
-  setImageProfile$Png$Response(params: SetImageProfile$Png$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-    return setImageProfile$Png(this.http, this.rootUrl, params, context);
+  setImageProfile$Response(params: SetImageProfile$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+    return setImageProfile(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -258,42 +256,12 @@ export class UserService extends BaseService {
    * set an image profile for an existing user
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `setImageProfile$Png$Response()` instead.
+   * To access the full response (for headers, for example), `setImageProfile$Response()` instead.
    *
-   * This method sends `image/png` and handles request body of type `image/png`.
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
    */
-  setImageProfile$Png(params: SetImageProfile$Png$Params, context?: HttpContext): Observable<ConfirmationResponse> {
-    return this.setImageProfile$Png$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ConfirmationResponse>): ConfirmationResponse => r.body)
-    );
-  }
-
-  /**
-   * Register user image profile [For admin or current logged user only].
-   *
-   * set an image profile for an existing user
-   *
-   * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `setImageProfile$Jpeg()` instead.
-   *
-   * This method sends `image/jpeg` and handles request body of type `image/jpeg`.
-   */
-  setImageProfile$Jpeg$Response(params: SetImageProfile$Jpeg$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-    return setImageProfile$Jpeg(this.http, this.rootUrl, params, context);
-  }
-
-  /**
-   * Register user image profile [For admin or current logged user only].
-   *
-   * set an image profile for an existing user
-   *
-   * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `setImageProfile$Jpeg$Response()` instead.
-   *
-   * This method sends `image/jpeg` and handles request body of type `image/jpeg`.
-   */
-  setImageProfile$Jpeg(params: SetImageProfile$Jpeg$Params, context?: HttpContext): Observable<ConfirmationResponse> {
-    return this.setImageProfile$Jpeg$Response(params, context).pipe(
+  setImageProfile(params: SetImageProfile$Params, context?: HttpContext): Observable<ConfirmationResponse> {
+    return this.setImageProfile$Response(params, context).pipe(
       map((r: StrictHttpResponse<ConfirmationResponse>): ConfirmationResponse => r.body)
     );
   }

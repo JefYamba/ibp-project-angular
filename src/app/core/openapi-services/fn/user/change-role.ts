@@ -7,10 +7,11 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ConfirmationResponse } from '../../models/confirmation-response';
+import { RoleRequest } from '../../models/role-request';
 
 export interface ChangeRole$Params {
   user_id: number;
-      body: 'USER' | 'ADMIN'
+      body: RoleRequest
 }
 
 export function changeRole(http: HttpClient, rootUrl: string, params: ChangeRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {

@@ -19,7 +19,6 @@ import {LoggedUserService} from "../../core/services/logged-user.service";
 })
 export class UserAvatarComponent implements OnInit{
     loggedUser!: UserResponse;
-    user!: DummyUser;
 
     constructor(private loggedUserService:LoggedUserService) {
     }
@@ -29,8 +28,6 @@ export class UserAvatarComponent implements OnInit{
         this.loggedUserService.getLoggedUser().subscribe(loggedUser => {
             this.loggedUser = loggedUser;
         })
-
-        this.user = {firstName:"Joph Exauce Fouschard",lastname:"Yamba", role:Role.ADMIN, image:"./assets/images/Paimon.jpg"}
     }
 
 }
