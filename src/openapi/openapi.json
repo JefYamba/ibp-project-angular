@@ -67,7 +67,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageUserResponse"
                                 }
@@ -97,7 +97,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -107,7 +107,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -117,7 +117,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -127,7 +127,7 @@
                     "406": {
                         "description": "Not acceptable/ Invalid object",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -157,7 +157,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -167,7 +167,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -177,7 +177,7 @@
                     "406": {
                         "description": "Not acceptable/ Invalid object",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -224,7 +224,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -234,7 +234,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -277,7 +277,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -287,7 +287,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -297,7 +297,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -307,7 +307,7 @@
                     "406": {
                         "description": "Not acceptable/ Invalid object",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -351,7 +351,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -381,7 +381,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -391,7 +391,7 @@
                     "400": {
                         "description": "Bad request",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -401,7 +401,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -431,7 +431,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -441,7 +441,7 @@
                     "400": {
                         "description": "Bad request",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -451,7 +451,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -504,7 +504,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageBookResponse"
                                 }
@@ -534,7 +534,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -544,7 +544,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -554,7 +554,7 @@
                     "406": {
                         "description": "Not acceptable/ Invalid object",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -584,7 +584,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -594,7 +594,7 @@
                     "400": {
                         "description": "Bad request",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -604,7 +604,7 @@
                     "406": {
                         "description": "Not acceptable/ Invalid object",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -648,7 +648,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageAnnouncementResponse"
                                 }
@@ -678,7 +678,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -688,7 +688,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -718,7 +718,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -728,7 +728,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -761,7 +761,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -771,7 +771,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -781,7 +781,7 @@
                     "404": {
                         "description": "Not found",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UserResponse"
                                 }
@@ -810,7 +810,21 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "image/png": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        },
+                        "image/jpeg": {
                             "schema": {
                                 "required": [
                                     "image"
@@ -830,7 +844,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -840,7 +854,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -850,7 +864,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -860,7 +874,7 @@
                     "500": {
                         "description": "Internal Server Error",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -891,7 +905,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -901,7 +915,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -911,7 +925,7 @@
                     "500": {
                         "description": "Internal Server Error",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -944,7 +958,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -954,7 +968,7 @@
                     "404": {
                         "description": "Not found",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/BookResponse"
                                 }
@@ -983,7 +997,21 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "image/png": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        },
+                        "image/jpeg": {
                             "schema": {
                                 "required": [
                                     "image"
@@ -1003,7 +1031,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1013,7 +1041,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1023,7 +1051,7 @@
                     "500": {
                         "description": "Internal Server Error",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1054,7 +1082,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1064,7 +1092,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1074,7 +1102,7 @@
                     "500": {
                         "description": "Internal Server Error",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1106,7 +1134,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AuthentificationResponse"
                                 }
@@ -1116,7 +1144,7 @@
                     "401": {
                         "description": "Unauthorized / Can't authenticate",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AuthentificationResponse"
                                 }
@@ -1149,7 +1177,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -1159,7 +1187,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -1169,7 +1197,7 @@
                     "404": {
                         "description": "Not found",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageResponse"
                                 }
@@ -1200,7 +1228,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1210,7 +1238,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1263,7 +1291,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -1273,7 +1301,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -1326,7 +1354,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -1336,7 +1364,7 @@
                     "403": {
                         "description": "Not authorized",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -1380,7 +1408,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageMessageResponse"
                                 }
@@ -1606,7 +1634,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PageBookResponse"
                                 }
@@ -1639,7 +1667,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -1649,7 +1677,7 @@
                     "404": {
                         "description": "Not found",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AnnouncementResponse"
                                 }
@@ -1680,7 +1708,7 @@
                     "200": {
                         "description": "Success",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -1690,7 +1718,7 @@
                     "400": {
                         "description": "Bad request/ Invalid parameter",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ConfirmationResponse"
                                 }
@@ -2048,11 +2076,11 @@
                             "$ref": "#/components/schemas/SortObject"
                         }
                     },
-                    "pageNumber": {
+                    "pageSize": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "pageSize": {
+                    "pageNumber": {
                         "type": "integer",
                         "format": "int32"
                     },

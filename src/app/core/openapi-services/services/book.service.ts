@@ -22,8 +22,10 @@ import { GetAllLatestBooks$Params } from '../fn/book/get-all-latest-books';
 import { PageBookResponse } from '../models/page-book-response';
 import { register2 } from '../fn/book/register-2';
 import { Register2$Params } from '../fn/book/register-2';
-import { setImageCover } from '../fn/book/set-image-cover';
-import { SetImageCover$Params } from '../fn/book/set-image-cover';
+import { setImageCover$Jpeg } from '../fn/book/set-image-cover-jpeg';
+import { SetImageCover$Jpeg$Params } from '../fn/book/set-image-cover-jpeg';
+import { setImageCover$Png } from '../fn/book/set-image-cover-png';
+import { SetImageCover$Png$Params } from '../fn/book/set-image-cover-png';
 import { update2 } from '../fn/book/update-2';
 import { Update2$Params } from '../fn/book/update-2';
 
@@ -174,12 +176,12 @@ export class BookService extends BaseService {
    * set an image cover for an existing book
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `setImageCover()` instead.
+   * To access only the response body, use `setImageCover$Png()` instead.
    *
-   * This method sends `application/json` and handles request body of type `application/json`.
+   * This method sends `image/png` and handles request body of type `image/png`.
    */
-  setImageCover$Response(params: SetImageCover$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-    return setImageCover(this.http, this.rootUrl, params, context);
+  setImageCover$Png$Response(params: SetImageCover$Png$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+    return setImageCover$Png(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -188,12 +190,42 @@ export class BookService extends BaseService {
    * set an image cover for an existing book
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `setImageCover$Response()` instead.
+   * To access the full response (for headers, for example), `setImageCover$Png$Response()` instead.
    *
-   * This method sends `application/json` and handles request body of type `application/json`.
+   * This method sends `image/png` and handles request body of type `image/png`.
    */
-  setImageCover(params: SetImageCover$Params, context?: HttpContext): Observable<ConfirmationResponse> {
-    return this.setImageCover$Response(params, context).pipe(
+  setImageCover$Png(params: SetImageCover$Png$Params, context?: HttpContext): Observable<ConfirmationResponse> {
+    return this.setImageCover$Png$Response(params, context).pipe(
+      map((r: StrictHttpResponse<ConfirmationResponse>): ConfirmationResponse => r.body)
+    );
+  }
+
+  /**
+   * Register book image cover  [For admin only].
+   *
+   * set an image cover for an existing book
+   *
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `setImageCover$Jpeg()` instead.
+   *
+   * This method sends `image/jpeg` and handles request body of type `image/jpeg`.
+   */
+  setImageCover$Jpeg$Response(params: SetImageCover$Jpeg$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+    return setImageCover$Jpeg(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * Register book image cover  [For admin only].
+   *
+   * set an image cover for an existing book
+   *
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `setImageCover$Jpeg$Response()` instead.
+   *
+   * This method sends `image/jpeg` and handles request body of type `image/jpeg`.
+   */
+  setImageCover$Jpeg(params: SetImageCover$Jpeg$Params, context?: HttpContext): Observable<ConfirmationResponse> {
+    return this.setImageCover$Jpeg$Response(params, context).pipe(
       map((r: StrictHttpResponse<ConfirmationResponse>): ConfirmationResponse => r.body)
     );
   }

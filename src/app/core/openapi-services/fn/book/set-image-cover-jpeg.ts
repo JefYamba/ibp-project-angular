@@ -8,22 +8,22 @@ import { RequestBuilder } from '../../request-builder';
 
 import { ConfirmationResponse } from '../../models/confirmation-response';
 
-export interface SetImageCover$Params {
+export interface SetImageCover$Jpeg$Params {
   book_id: number;
       body?: {
 'image': Blob;
 }
 }
 
-export function setImageCover(http: HttpClient, rootUrl: string, params: SetImageCover$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-  const rb = new RequestBuilder(rootUrl, setImageCover.PATH, 'post');
+export function setImageCover$Jpeg(http: HttpClient, rootUrl: string, params: SetImageCover$Jpeg$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+  const rb = new RequestBuilder(rootUrl, setImageCover$Jpeg.PATH, 'post');
   if (params) {
     rb.path('book_id', params.book_id, {});
-    rb.body(params.body, 'application/json');
+    rb.body(params.body, 'image/jpeg');
   }
 
   return http.request(
-    rb.build({ responseType: 'json', accept: '*/*', context })
+    rb.build({ responseType: 'json', accept: 'application/json', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
@@ -32,4 +32,4 @@ export function setImageCover(http: HttpClient, rootUrl: string, params: SetImag
   );
 }
 
-setImageCover.PATH = '/ibp/v1/books/{book_id}';
+setImageCover$Jpeg.PATH = '/ibp/v1/books/{book_id}';

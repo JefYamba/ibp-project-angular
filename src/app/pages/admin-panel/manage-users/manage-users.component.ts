@@ -56,7 +56,7 @@ export class ManageUsersComponent implements OnInit{
                         this.usersPage.content = this.usersPage.content?.filter(user => user.id !== id);
                     },
                     error: err => {
-                        this.toastMessage = err.error.message
+                        this.toastMessage = err.error.error
                         this.showToast(this.toastElement, ToastType.ERROR)
                     }
                 }

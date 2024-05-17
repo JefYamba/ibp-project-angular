@@ -23,11 +23,8 @@
             <tr *ngFor="let user of usersPage.content">
                 <td class="text-center">
                     <img ngSrc="{{ user.image ? user.image : './assets/images/default.png' }}"
-                         alt="profile image"
-                         width="32"
-                         height="32"
-                         class="rounded"
-                         priority
+                         alt="profile image" width="32" height="32" class="rounded" priority
+                         style="object-fit: cover"
                     >
                 </td>
                 <td>{{user.firstName}}</td>

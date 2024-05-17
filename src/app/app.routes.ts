@@ -28,7 +28,7 @@ export const routes: Routes = [
             {path:"books", component: BookListComponent},
             {path:"book/view/:id", component: BookViewComponent}, // view book details
             {path:"announcements", component: AnnouncementListComponent},
-            {path:"profile", component: EditUserComponent}, // current user's profile
+            {path:"profile/:id", component: EditUserComponent}, // current user's profile
             {path:"message", component: EditMessageComponent}, // current user's profile
             {path:"user/messages", component: UserMessagesComponent},
         ]

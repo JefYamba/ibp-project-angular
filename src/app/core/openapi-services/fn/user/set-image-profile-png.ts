@@ -8,14 +8,18 @@ import { RequestBuilder } from '../../request-builder';
 
 import { ConfirmationResponse } from '../../models/confirmation-response';
 
-export interface Delete3$Params {
-  announcement_id: number;
+export interface SetImageProfile$Png$Params {
+  user_id: number;
+      body?: {
+'image': Blob;
+}
 }
 
-export function delete3(http: HttpClient, rootUrl: string, params: Delete3$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
-  const rb = new RequestBuilder(rootUrl, delete3.PATH, 'delete');
+export function setImageProfile$Png(http: HttpClient, rootUrl: string, params: SetImageProfile$Png$Params, context?: HttpContext): Observable<StrictHttpResponse<ConfirmationResponse>> {
+  const rb = new RequestBuilder(rootUrl, setImageProfile$Png.PATH, 'post');
   if (params) {
-    rb.path('announcement_id', params.announcement_id, {});
+    rb.path('user_id', params.user_id, {});
+    rb.body(params.body, 'image/png');
   }
 
   return http.request(
@@ -28,4 +32,4 @@ export function delete3(http: HttpClient, rootUrl: string, params: Delete3$Param
   );
 }
 
-delete3.PATH = '/ibp/v1/announcements/{announcement_id}';
+setImageProfile$Png.PATH = '/ibp/v1/users/{user_id}';

@@ -10,7 +10,7 @@
     </a>
     <ul class="dropdown-menu text-small shadow dropdown-menu-end p-3" style="width: 220px">
         <li>
-            <a  [routerLink]="['/profile']"  class="dropdown-item d-flex gap-2 align-items-center">
+            <a  [routerLink]="['/profile',loggedUser.id]"  class="dropdown-item d-flex gap-2 align-items-center">
                 <i class="bi bi-person-bounding-box  me-2"></i>
                 <span>Profile</span>
             </a>
