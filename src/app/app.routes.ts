@@ -16,12 +16,16 @@ import {ManageMessagesComponent} from "./pages/admin-panel/manage-messages/manag
 import {EditBookComponent} from "./pages/admin-panel/edit-book/edit-book.component";
 import {EditAnnouncementComponent} from "./pages/admin-panel/edit-announcement/edit-announcement.component";
 import {LoginComponent} from "./pages/login/login.component";
+import {authGuard} from "./core/guards/auth.guard";
+import {adminGuard} from "./core/guards/admin.guard";
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 
 export const routes: Routes = [
     {
         path:"",
         component: UserPanelComponent,
+        canActivate:[authGuard],
         children:[
             {path:"", redirectTo: "home", pathMatch: "full"},
             {path:"home", component: HomeComponent},
@@ -36,6 +40,10 @@ export const routes: Routes = [
     {
         path:"admin",
         component: AdminPanelComponent,
+        canActivate:[authGuard, adminGuard],
+        data:{
+          role: 'ADMIN',
+        },
         children:[
             {path:"", component: DashboardComponent},
             {path:"users", component: ManageUsersComponent},// manage users
@@ -45,7 +53,7 @@ export const routes: Routes = [
             {path:"user", component: EditUserComponent}, // create
             {path:"user/:id", component: EditUserComponent}, // update
             //{path:"message", component: EditMessageComponent}, // for user To send a message to all the admins; receiver is not required
-            {path:"message/:receiver", component: EditMessageComponent}, // for admin To send a message to a user; receiver is required
+            {path:"message/:id", component: EditMessageComponent}, // for admin To send a message to a user; receiver is required
             {path:"book", component: EditBookComponent},// create
             {path:"book/:id", component: EditBookComponent},// update
             {path:"announcement", component: EditAnnouncementComponent},// create
@@ -53,5 +61,9 @@ export const routes: Routes = [
         ]
     },
     {path:"login", component: LoginComponent},
-    {path:"**", redirectTo: "login", pathMatch: "full"},
+    {
+        path:"**",
+        component: NotFoundComponent,
+        canActivate:[authGuard],
+    },
 ];

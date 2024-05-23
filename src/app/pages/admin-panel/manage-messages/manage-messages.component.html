@@ -8,32 +8,40 @@
             </select>
         </div>
     </div>
-    <div class="mt-4 d-flex flex-column">
-        <div class="p-2 "  *ngFor="let message of messagesPage.content">
+    <div class="mt-4 d-flex flex-row flex-wrap">
+        <div class="p-2 col-12 col-md-6"  *ngFor="let message of messagesPage.content">
 
-            <div class="p-3 bg-body rounded shadow-sm bg-body-tertiary  " >
-                <div class="border-bottom  mb-2">
-
-                    <div class="d-flex justify-content-between pb-2 ">
-                        <div class="d-flex align-items-center gap-2">
-                            <img ngSrc="{{message.sender?.image ? message.sender?.image  : './assets/images/default.png' }}" alt="Image" width="37" height="37" class="rounded" priority>
-                            <div class="d-flex flex-column align-items-start ms-2">
-                                 <span class="text-gray-dark fst-italic border-bottom" style="line-height: 1rem; padding-bottom: 2px">{{message.sender?.firstName}} {{message.sender?.lastName}}</span>
-                                <span class="fst-italic" style="font-size: 12px">{{message.createdAt | date}}</span>
-                            </div>
+            <div [ngClass]="message.receiver ? 'bg-body-secondary' : 'bg-danger-subtle' " class="p-3 rounded shadow-sm  " >
+                <div class="d-flex justify-content-between pb-2 border-bottom">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="fst-italic" style="font-size: 12px">{{message.createdAt | date:'medium'}}</span>
+                    </div>
+                    <div class="d-flex gap-2 ms-auto">
+                        <button (click)="deleteMessage(message.id)"  class="btn btn-sm btn-outline-danger" style="aspect-ratio: 1/1">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div *ngIf="message.sender"  [routerLink]="['/admin/message', message.sender.id]" class="d-flex gap-2 align-items-center my-1 py-1 px-2 rounded-1 user">
+                        <img ngSrc="{{message.sender.image ? message.sender.image  : './assets/images/default.png' }}" alt="Image" width="37" height="37" class="rounded rounded-circle" priority>
+                        <div class="d-flex flex-column">
+                            <span class="fst-italic" style="font-size: 12px">Sender</span>
+                            <span class="text-gray-dark fst-italic" style="font-size: 14px; line-height: 1rem; padding-bottom: 2px">{{message.sender.firstName}} {{message.sender.lastName}}</span>
                         </div>
-                        <div class="d-flex gap-2 ms-auto">
-                            <button [routerLink]="['/admin/message', message.sender?.id]" class="btn btn-sm btn-outline-info" style="aspect-ratio: 1/1">
-                                <i class="bi bi-chat-left"></i>
-                            </button>
-                            <button (click)="deleteMessage(message.id)"  class="btn btn-sm btn-outline-danger" style="aspect-ratio: 1/1">
-                                <i class="bi bi-trash"></i>
-                            </button>
+                    </div>
+                    <div *ngIf="message.receiver" [routerLink]="['/admin/message', message.receiver.id]" class="d-flex gap-2 align-items-center my-1 py-1  px-2 rounded-1 user">
+                        <div class="d-flex flex-column text-end">
+                            <span class="fst-italic" style="font-size: 12px">Receiver</span>
+                            <span class="text-gray-dark fst-italic" style="font-size: 14px; line-height: 1rem; padding-bottom: 2px">{{message.receiver.firstName}} {{message.receiver.lastName}}</span>
                         </div>
+                        <img ngSrc="{{message.receiver.image ? message.receiver.image  : './assets/images/default.png' }}" alt="Image" width="37" height="37" class="rounded rounded-circle" priority>
                     </div>
                 </div>
 
-                <div>{{message.content}}</div>
+                <div class="p-3 bg-body-tertiary rounded">
+                    {{message.content}}
+                </div>
 
             </div>
 

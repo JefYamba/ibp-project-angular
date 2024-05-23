@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {DummyUser} from "../../core/models/DummyUser";
-import {Role} from "../../core/models/Role";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {UserResponse} from "../../core/openapi-services/models/user-response";
 import {LoggedUserService} from "../../core/services/logged-user.service";
+import {TokenService} from "../../core/services/token/token.service";
 
 @Component({
   selector: 'app-user-avatar',
@@ -20,7 +19,11 @@ import {LoggedUserService} from "../../core/services/logged-user.service";
 export class UserAvatarComponent implements OnInit{
     loggedUser!: UserResponse;
 
-    constructor(private loggedUserService:LoggedUserService) {
+    constructor(
+        private loggedUserService:LoggedUserService,
+        private tokenService: TokenService,
+        private router: Router
+    ) {
     }
 
     ngOnInit(): void {
@@ -30,4 +33,8 @@ export class UserAvatarComponent implements OnInit{
         })
     }
 
+    logout() {
+        this.tokenService.deleteToken();
+        this.router.navigate(['/login']).then(()=> window.location.reload());
+    }
 }

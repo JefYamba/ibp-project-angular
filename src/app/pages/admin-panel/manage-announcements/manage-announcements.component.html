@@ -11,7 +11,7 @@
         <div class="p-2"  *ngFor="let announcement of announcementsPage.content">
             <div  class="p-3 bg-body rounded shadow-sm bg-body-tertiary">
                 <div class="d-flex gap-2 align-items-center border-bottom pb-2 mb-3">
-                    <span class="fst-italic" style="font-size: 12px">{{announcement.createdAt | date}}</span>
+                    <span class="fst-italic" style="font-size: 12px">{{announcement.createdAt | date:'medium' }}</span>
                     <button (click)="deleteAnnouncement(announcement.id)"
                             class="ms-auto btn btn-sm btn-outline-danger"
                             style="aspect-ratio: 1/1"

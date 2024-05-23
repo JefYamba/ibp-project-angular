@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {UserResponse} from "../../openapi-services/models/user-response";
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +11,9 @@ export class TokenService {
 
     get token() {
       return localStorage.getItem('token') as string;
+    }
+
+    deleteToken(): void {
+        localStorage.removeItem('token');
     }
 }

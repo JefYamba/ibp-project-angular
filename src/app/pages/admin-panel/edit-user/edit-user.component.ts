@@ -16,7 +16,7 @@ enum ViewState{
     PASSWORD,
     SECURITY
 }
-type PageMode = 'ADD' | 'UPDATE';
+export type PageMode = 'ADD' | 'UPDATE';
 
 @Component({
   selector: 'app-edit-user',
@@ -166,9 +166,6 @@ export class EditUserComponent implements OnInit{
                         }
                     })
             }
-            if (this.loggedUser.id === this.userRequest.id){
-
-            }
         }
 
     }
@@ -233,11 +230,6 @@ export class EditUserComponent implements OnInit{
                     }
                 })
         }
-
-
-
-
-
     }
 
     // Handle toast

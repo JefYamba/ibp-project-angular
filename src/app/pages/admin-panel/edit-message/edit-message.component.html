@@ -1,8 +1,8 @@
 <div class="my-3 p-3 bg-body rounded shadow-sm bg-body-tertiary">
     <h6 class="border-bottom pb-2 mb-0">Send Message</h6>
     <div class="d-flex flex-column text-body-secondary pt-3">
-        <div class="d-flex align-items-center gap-3 mb-3">
-            <img ngSrc="{{'./assets/images/default.png' }}"
+        <div *ngIf="receiver" class="d-flex align-items-center gap-3 mb-3">
+            <img ngSrc="{{ receiver.image ? receiver.image : './assets/images/default.png' }}"
                  alt=""
                  width="32"
                  height="32"
@@ -10,15 +10,16 @@
                  priority
             >
             <p class="mb-0 small lh-sm border-bottom">
-                <strong class="d-block text-gray-dark mb-2 fst-italic">Receiver name</strong>
+                <strong class="d-block text-gray-dark mb-2 fst-italic">{{ receiver.firstName }} {{ receiver.lastName }}</strong>
             </p>
         </div>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Announcement content" id="content" style="height: 200px"></textarea>
+            <textarea class="form-control" [(ngModel)]="messageRequest.content" name="content" placeholder="Announcement content" id="content" style="height: 200px"></textarea>
             <label for="content">Message content</label>
         </div>
-        <div class="d-flex mt-3">
-            <button type="submit" class="btn btn-primary ms-auto w-25">Send</button>
+        <div class="d-flex mt-3 gap-3">
+            <button [routerLink]="[ isAdminLink ? '/admin/messages' : '/user/messages' ]" class="btn btn-outline-secondary btn-sm ms-auto w-25">Cancel</button>
+            <button (click)="saveMassage()" type="submit" class="btn btn-primary btn-sm  w-25">Send</button>
         </div>
     </div>
 </div>
