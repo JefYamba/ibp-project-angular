@@ -41,7 +41,6 @@ export class ManageMessagesComponent implements OnInit{
                 .subscribe({
                     next: messagePage => {
                         this.messagesPage = messagePage;
-                        console.log(this.messagesPage.content)
                     }
                 })
         } else {
@@ -49,12 +48,9 @@ export class ManageMessagesComponent implements OnInit{
                 .subscribe({
                     next: messagePage => {
                         this.messagesPage = messagePage;
-                        console.log(this.messagesPage.content)
                     }
                 });
         }
-
-
     }
     deleteMessage(id: number | undefined) {
         if (id) {
