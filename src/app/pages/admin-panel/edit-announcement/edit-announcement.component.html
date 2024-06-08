@@ -6,7 +6,8 @@
             <textarea class="form-control" [(ngModel)]="announcementRequest.content" name="content" placeholder="Announcement content" id="content" style="height: 200px"></textarea>
             <label for="content">Announcement content</label>
         </div>
-        <div class="d-flex mt-3">
+        <div class="d-flex mt-3 gap-3">
+            <a [routerLink]="['/admin/announcements' ]" type="submit" class="btn w-25 btn-outline-secondary btn-sm">Go Back</a>
             <button (click)="saveAnnouncement()" type="submit" class="btn btn-primary ms-auto w-25">Send</button>
         </div>
     </div>

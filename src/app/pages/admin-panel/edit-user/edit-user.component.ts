@@ -219,6 +219,7 @@ export class EditUserComponent implements OnInit{
                     next: () =>{
                         this.toastMessage.push("User updated successfully");
                         this.showToast(this.toastElement, ToastType.SUCCESS);
+                        this.router.navigate(["admin/users"]).then(() => window.location.reload());
                     },
                     error: err => {
                         if (err.error.formErrors){
@@ -227,6 +228,7 @@ export class EditUserComponent implements OnInit{
                             this.toastMessage.push("User already exist")
                         }
                         this.showToast(this.toastElement, ToastType.ERROR);
+                        this.router.navigate(["admin/users"]).then(() => window.location.reload());
                     }
                 })
         }

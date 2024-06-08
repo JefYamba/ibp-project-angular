@@ -148,6 +148,7 @@ export class EditBookComponent implements OnInit{
                     next: () =>{
                         this.toastMessage.push("Book updated successfully");
                         this.showToast(this.toastElement, ToastType.SUCCESS);
+                        this.router.navigate(["admin/books"]).then(() => window.location.reload());
                     },
                     error: err => {
                         if (err.error.formErrors){
@@ -156,6 +157,7 @@ export class EditBookComponent implements OnInit{
                             this.toastMessage.push("Book already exist")
                         }
                         this.showToast(this.toastElement, ToastType.ERROR);
+                        this.router.navigate(["admin/books"]).then(() => window.location.reload());
                     }
                 })
         }

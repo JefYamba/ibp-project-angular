@@ -18,8 +18,8 @@
             <label for="content">Message content</label>
         </div>
         <div class="d-flex mt-3 gap-3">
-            <button [routerLink]="[ isAdminLink ? '/admin/messages' : '/user/messages' ]" class="btn btn-outline-secondary btn-sm ms-auto w-25">Cancel</button>
-            <button (click)="saveMassage()" type="submit" class="btn btn-primary btn-sm  w-25">Send</button>
+            <button [routerLink]="[ isAdminLink ? '/admin/messages' : '/user/messages' ]" class="btn btn-outline-secondary btn-sm w-25">Go back</button>
+            <button (click)="saveMassage()" type="submit" class="btn btn-primary btn-sm  w-25 ms-auto">Send</button>
         </div>
     </div>
 </div>

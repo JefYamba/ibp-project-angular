@@ -1,3 +1,3 @@
 export class AppConfig{
-    public static appName: string = "Books";
+    public static appName: string = "IBP Books";
 }

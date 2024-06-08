@@ -38,13 +38,13 @@ export class HomeComponent implements OnInit{
     ngOnInit(): void {
         this.isOnMobile = window.innerWidth  < 768;
 
-        this.bookService.getAllLatestBooks().subscribe(bookPage => {
-            this.booksList = bookPage.content?.slice(0,6);
+        this.bookService.getAllLatestBooks({size: 12}).subscribe(bookPage => {
+            this.booksList = bookPage.content;
             }
         )
 
-        this.annnouncementService.getAnnouncements().subscribe(announcementPage => {
-            this.announcementsList = announcementPage.content?.slice(0,3);
+        this.annnouncementService.getAnnouncements({size: 3}).subscribe(announcementPage => {
+            this.announcementsList = announcementPage.content;
             }
         )
     }

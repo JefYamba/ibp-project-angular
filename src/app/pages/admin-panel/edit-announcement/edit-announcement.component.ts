@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {AnnouncementRequest} from "../../../core/openapi-services/models/announcement-request";
 import {AnnouncementService} from "../../../core/openapi-services/services/announcement.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -10,7 +10,8 @@ import {FormsModule} from "@angular/forms";
   standalone: true,
     imports: [
         NgOptimizedImage,
-        FormsModule
+        FormsModule,
+        RouterLink
     ],
   templateUrl: './edit-announcement.component.html',
   styleUrl: './edit-announcement.component.css'
